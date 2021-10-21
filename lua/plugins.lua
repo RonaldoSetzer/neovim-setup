@@ -88,15 +88,12 @@ return require('packer').startup(function(use)
 
   -- Snippets --------------------------------
   use 'hrsh7th/vim-vsnip'
-
+  use 'hrsh7th/cmp-vsnip'
   -- LSP -------------------------------------
   use 'neovim/nvim-lspconfig'
-  use {
-    'hrsh7th/nvim-compe',
-    config = function()
-      require('plugins-config/nvim-compe')
-    end
-  }
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/nvim-cmp'
   use {
     'onsails/lspkind-nvim',
     config = function()
