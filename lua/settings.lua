@@ -1,4 +1,5 @@
 vim.cmd('set shortmess+=c')
+vim.o.completeopt = 'menu,menuone,preview,noselect,noinsert'
 vim.o.termguicolors = true
 vim.o.encoding = 'UTF-8'
 vim.o.hidden = true -- Allow to switch between buffers without saving

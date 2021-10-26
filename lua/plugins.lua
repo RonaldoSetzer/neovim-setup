@@ -86,14 +86,19 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Snippets --------------------------------
-  use 'hrsh7th/vim-vsnip'
-  use 'hrsh7th/cmp-vsnip'
   -- LSP -------------------------------------
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      {'hrsh7th/cmp-buffer'}, {'hrsh7th/cmp-nvim-lsp'}, {'hrsh7th/cmp-path'}, {'hrsh7th/cmp-nvim-lua'},
+      {'hrsh7th/nvim-cmp'}, {'hrsh7th/cmp-vsnip'}, {'hrsh7th/vim-vsnip'}, {'ray-x/cmp-treesitter'},
+      {'Saecki/crates.nvim'}, {'f3fora/cmp-spell'}
+    },
+    config = function()
+      require('plugins-config/nvim-cmp')
+    end
+  }
   use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/nvim-cmp'
   use {
     'onsails/lspkind-nvim',
     config = function()
