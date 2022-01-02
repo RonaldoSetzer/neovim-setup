@@ -12,7 +12,7 @@ vim.api.nvim_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', keym
 vim.api.nvim_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', keymapOpt)
 vim.api.nvim_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', keymapOpt)
 vim.api.nvim_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', keymapOpt)
-vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>', keymapOpt)
+-- vim.api.nvim_set_keymap('n', '<leader>p', '<cmd>lua vim.lsp.buf.formatting_seq_sync()<CR>', keymapOpt)
 
 local function addReferencesHighlight(client)
   if client.resolved_capabilities.document_highlight then

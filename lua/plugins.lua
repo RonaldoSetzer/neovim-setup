@@ -37,7 +37,7 @@ return require('packer').startup {
       'NTBBloodbath/galaxyline.nvim',
       -- your statusline
       config = function()
-        require('galaxyline.themes.neonline')
+        require('galaxyline.themes.eviline')
       end,
       -- some optional icons
       requires = {'kyazdani42/nvim-web-devicons', opt = true}
@@ -59,7 +59,6 @@ return require('packer').startup {
     use {
       'windwp/nvim-ts-autotag',
       config = function()
-
         require('nvim-ts-autotag').setup()
       end
     }
@@ -71,7 +70,10 @@ return require('packer').startup {
     }
     use 'tpope/vim-surround' -- vimscript
     use 'tpope/vim-repeat' -- vimscript, allow repeat surround with .
-
+    use {'jose-elias-alvarez/null-ls.nvim', config= function ()
+      require('plugins-config/null-ls')
+    end
+    }
     -- Commands --------------------------------
     use 'tpope/vim-eunuch'
 

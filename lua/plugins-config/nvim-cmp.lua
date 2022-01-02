@@ -57,7 +57,7 @@ cmp.setup {
     -- 'crates' is lazy loaded
     {name = 'nvim_lsp'}, {name = 'treesitter'}, {name = 'vsnip'}, {name = 'path'}, {
       name = 'buffer',
-      opts = {
+      options = {
         get_bufnrs = function()
           return vim.api.nvim_list_bufs()
         end
