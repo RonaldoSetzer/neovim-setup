@@ -54,5 +54,11 @@ return packer.startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
 
+  -- LSP (Language Server Protocol)
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use {'tami5/lspsaga.nvim'}
+
+
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
