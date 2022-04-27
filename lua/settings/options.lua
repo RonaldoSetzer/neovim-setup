@@ -1,8 +1,6 @@
 vim.cmd('set shortmess+=c')
 vim.o.completeopt = 'menu,menuone,preview,noselect,noinsert'
 vim.o.termguicolors = true
-vim.o.encoding = 'UTF-8'
-vim.o.hidden = true -- Allow to switch between buffers without saving
 vim.o.title = true -- change the terminal's title
 vim.o.smartcase = true -- "Smart case search if there is uppercase
 vim.o.ignorecase = true -- "case insensitive search
@@ -25,7 +23,6 @@ vim.bo.smartindent = true -- "Use smarter indenting
 
 vim.wo.t_Co = '256' -- Support 256 colors
 vim.wo.number = true -- Line numbers are good
-vim.wo.relativenumber = true -- Show numbers relative to current line
 vim.wo.cursorline = true -- Highlight current line
 vim.wo.wrap = true -- Enable word wrap
 vim.wo.linebreak = true -- "Wrap lines at convenient points
@@ -33,10 +30,7 @@ vim.wo.breakindent = true -- "Preserve indent on line wrap
 vim.wo.signcolumn = 'yes'
 vim.wo.colorcolumn = '100' -- "Highlight 100th column for easier wrapping
 vim.wo.foldmethod = 'syntax' -- "When folding enabled, use syntax method
--- vim.o.listchars = 'tab:>\ ,trail:¬∑' --"Set trails for tabs and spaces
--- vim.o.nofoldenable = true --"Disable folding by default
--- vim.bo.diffopt = 'vertical'
---
+
 vim.api.nvim_exec([[
 " Auto magically Mkdir
 " ====================
