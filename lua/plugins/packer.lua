@@ -73,6 +73,17 @@ return packer.startup(function(use)
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use {'tami5/lspsaga.nvim'}
 
+  -- Git
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      vim.cmd [[ highlight GitSignsChange guifg=#b8bb26 guibg=#3c3836 ]]
+      vim.cmd [[ highlight GitSignsAdd guifg=#8ec07c guibg=#3c3836 ]]
+      vim.cmd [[ highlight GitSignsDelete guifg=#fe8019 guibg=#3c3836 ]]
+    end
+  }
+  use "tpope/vim-fugitive" -- Vimscript
+
 
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)

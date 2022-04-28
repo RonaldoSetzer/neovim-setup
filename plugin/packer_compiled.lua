@@ -109,6 +109,12 @@ _G.packer_plugins = {
     path = "/Users/ronaldoconceicao/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
+  ["gitsigns.nvim"] = {
+    config = { "\27LJ\2\nå\1\0\0\3\0\5\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\1\0'\2\4\0B\0\2\1K\0\1\0; highlight GitSignsDelete guifg=#fe8019 guibg=#3c3836 8 highlight GitSignsAdd guifg=#8ec07c guibg=#3c3836 ; highlight GitSignsChange guifg=#b8bb26 guibg=#3c3836 \bcmd\bvim\0" },
+    loaded = true,
+    path = "/Users/ronaldoconceicao/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
   ["kaiser.vim"] = {
     config = { "\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme kaiser\bcmd\bvim\0" },
     loaded = true,
@@ -164,6 +170,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/ronaldoconceicao/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/Users/ronaldoconceicao/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 
@@ -172,6 +183,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for kaiser.vim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\23colorscheme kaiser\bcmd\bvim\0", "config", "kaiser.vim")
 time([[Config for kaiser.vim]], false)
+-- Config for: gitsigns.nvim
+time([[Config for gitsigns.nvim]], true)
+try_loadstring("\27LJ\2\nå\1\0\0\3\0\5\0\r6\0\0\0009\0\1\0'\2\2\0B\0\2\0016\0\0\0009\0\1\0'\2\3\0B\0\2\0016\0\0\0009\0\1\0'\2\4\0B\0\2\1K\0\1\0; highlight GitSignsDelete guifg=#fe8019 guibg=#3c3836 8 highlight GitSignsAdd guifg=#8ec07c guibg=#3c3836 ; highlight GitSignsChange guifg=#b8bb26 guibg=#3c3836 \bcmd\bvim\0", "config", "gitsigns.nvim")
+time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
 end)
