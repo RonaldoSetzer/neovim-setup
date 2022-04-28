@@ -99,6 +99,10 @@ return packer.startup(function(use)
     requires = "kyazdani42/nvim-web-devicons",
     config = function() require("trouble").setup() end
   }
+  use {
+    "rcarriga/nvim-notify",
+    config = function() vim.notify = require("notify") end
+  }
 
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
