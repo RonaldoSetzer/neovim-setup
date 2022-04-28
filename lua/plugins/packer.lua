@@ -105,5 +105,9 @@ return packer.startup(function(use)
     config = function() vim.notify = require("notify") end
   }
 
+  -- Utils
+  use "tpope/vim-surround"
+  use "tpope/vim-eunuch"
+
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
