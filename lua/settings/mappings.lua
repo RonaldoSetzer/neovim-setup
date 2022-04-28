@@ -63,3 +63,6 @@ vim.api.nvim_set_keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
 
 -- Trouble
 vim.api.nvim_set_keymap('n', '<Leader>d', '<cmd>TroubleToggle<CR>', opt)
+
+-- NvimTree
+vim.api.nvim_set_keymap('n', '<Space>e', ':NvimTreeToggle<CR>', opt)
