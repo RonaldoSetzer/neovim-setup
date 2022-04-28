@@ -44,6 +44,7 @@ return packer.startup(function(use)
       vim.cmd('colorscheme kaiser')
     end
   }
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
