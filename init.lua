@@ -1,4 +1,5 @@
 require"settings.options"
+require"settings.mappings"
 require"plugins.packer"
 require"plugins.cmp"
 require"plugins.treesitter"
