@@ -93,6 +93,12 @@ return packer.startup(function(use)
   }
   use "tpope/vim-fugitive" -- Vimscript
 
+  -- Diagnostic
+  use {
+    "folke/trouble.nvim",
+    requires = "kyazdani42/nvim-web-devicons",
+    config = function() require("trouble").setup() end
+  }
 
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)

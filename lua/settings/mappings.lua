@@ -60,3 +60,6 @@ vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)
 
 -- Fugitive
 vim.api.nvim_set_keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
+
+-- Trouble
+vim.api.nvim_set_keymap('n', '<Leader>d', '<cmd>TroubleToggle<CR>', opt)
