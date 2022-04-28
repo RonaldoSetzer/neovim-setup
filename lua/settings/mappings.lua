@@ -48,3 +48,12 @@ vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true, silent = true})
 
 -- Breakline to indent position
 vim.api.nvim_set_keymap('i', '<C-c>', '<CR><Esc>O', {noremap = true, silent = true})
+
+-- PLUGINS
+local opt = {noremap = true, silent = true}
+
+-- Telescope
+vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', opt)
+vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', opt)
+vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', opt)
+vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)

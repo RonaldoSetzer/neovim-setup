@@ -37,6 +37,14 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim"
   use "nvim-lua/plenary.nvim"
 
+  -- Appearance
+  use {
+    "dragon-themes/kaiser.vim",
+    config = function()
+      vim.cmd('colorscheme kaiser')
+    end
+  }
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -49,6 +57,12 @@ return packer.startup(function(use)
   -- snippets
   use "L3MON4D3/LuaSnip" -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- Telescope
+  use {
+    "nvim-telescope/telescope.nvim",
+    tag = "nvim-0.6"
+  }
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
