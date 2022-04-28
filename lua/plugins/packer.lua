@@ -45,6 +45,7 @@ return packer.startup(function(use)
     end
   }
   use "lukas-reineke/indent-blankline.nvim"
+  use 'kyazdani42/nvim-web-devicons'
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
