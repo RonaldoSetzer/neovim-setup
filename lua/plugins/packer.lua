@@ -68,10 +68,7 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Navigation
-  use {
-    "nvim-telescope/telescope.nvim",
-    tag = "nvim-0.6"
-  }
+  use {"nvim-telescope/telescope.nvim", tag = "nvim-0.6"}
   use 'kyazdani42/nvim-tree.lua'
 
   -- Treesitter
@@ -84,6 +81,7 @@ return packer.startup(function(use)
   use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use {'tami5/lspsaga.nvim'}
+  use "jose-elias-alvarez/null-ls.nvim" -- for formatters agnd linters
 
   -- Git
   use {
@@ -100,18 +98,19 @@ return packer.startup(function(use)
   use {
     "folke/trouble.nvim",
     requires = "kyazdani42/nvim-web-devicons",
-    config = function() require("trouble").setup() end
+    config = function()
+      require("trouble").setup()
+    end
   }
   use {
     "rcarriga/nvim-notify",
-    config = function() vim.notify = require("notify") end
+    config = function()
+      vim.notify = require("notify")
+    end
   }
 
   -- Utils
-  use {
-    "numToStr/Comment.nvim",
-    tag = "v0.6"
-  }
+  use {"numToStr/Comment.nvim", tag = "v0.6"}
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"
 
