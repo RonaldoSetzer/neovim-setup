@@ -1,68 +1,70 @@
+local opt = {noremap = true, silent = true}
+local keymap = vim.api.nvim_set_keymap
+
 -- Map for LeaderKey key
-vim.api.nvim_set_keymap('n', '<Space>', '<NOP>', {noremap = true, silent = true})
+keymap('n', '<Space>', '<NOP>', opt)
 vim.g.mapleader = ' '
 
 -- Clear highlight on pressing ESC
-vim.api.nvim_set_keymap('n', '<esc>', '<cmd>noh<CR><esc>', {noremap = true, silent = true})
+keymap('n', '<esc>', '<cmd>noh<CR><esc>', opt)
 
 -- Map jk, jj, kj for exit to normal mode
-vim.api.nvim_set_keymap('i', 'jk', '<Esc>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'jj', '<Esc>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'kk', '<Esc>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('i', 'kj', '<Esc>', {noremap = true, silent = true})
+keymap('i', 'jk', '<Esc>', opt)
+keymap('i', 'jj', '<Esc>', opt)
+keymap('i', 'kk', '<Esc>', opt)
+keymap('i', 'kj', '<Esc>', opt)
 
 -- Map save to Ctrl + S
-vim.api.nvim_set_keymap('n', '<C-s>', ':w<CR>', {silent = true})
-vim.api.nvim_set_keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', {silent = true})
+keymap('n', '<C-s>', ':w<CR>', {silent = true})
+keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', {silent = true})
 
 -- Map close buffer
-vim.api.nvim_set_keymap('n', '<Leader>w', ':bd<CR>', {noremap = true, silent = true})
+keymap('n', '<Leader>w', ':bd<CR>', opt)
 
 -- Navigation
-vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', {silent = true})
-vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', {silent = true})
+keymap('n', '<C-h>', '<C-w>h', {silent = true})
+keymap('n', '<C-j>', '<C-w>j', {silent = true})
+keymap('n', '<C-k>', '<C-w>k', {silent = true})
+keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
 -- Remove newbie crutches in Normal and Visual Mode
-vim.api.nvim_set_keymap('n', '<Down>', '<NOP>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Left>', '<NOP>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Right>', '<NOP>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<Up>', '<NOP>', {noremap = true, silent = true})
+keymap('n', '<Down>', '<NOP>', opt)
+keymap('n', '<Left>', '<NOP>', opt)
+keymap('n', '<Right>', '<NOP>', opt)
+keymap('n', '<Up>', '<NOP>', opt)
 
-vim.api.nvim_set_keymap('v', '<Down>', '<NOP>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<Left>', '<NOP>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<Right>', '<NOP>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '<Up>', '<NOP>', {noremap = true, silent = true})
+keymap('v', '<Down>', '<NOP>', opt)
+keymap('v', '<Left>', '<NOP>', opt)
+keymap('v', '<Right>', '<NOP>', opt)
+keymap('v', '<Up>', '<NOP>', opt)
 
 -- Swtich buffers with Tab
-vim.api.nvim_set_keymap('n', '<TAB>', ':bnext<CR>', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<S-TAB>', ':bprevious<CR>', {noremap = true, silent = true})
+keymap('n', '<TAB>', ':bnext<CR>', opt)
+keymap('n', '<S-TAB>', ':bprevious<CR>', opt)
 
 -- Improve indenting (visual)
-vim.api.nvim_set_keymap('v', '<', '<gv', {noremap = true, silent = true})
-vim.api.nvim_set_keymap('v', '>', '>gv', {noremap = true, silent = true})
+keymap('v', '<', '<gv', opt)
+keymap('v', '>', '>gv', opt)
 
 -- Yank to the end of the line
-vim.api.nvim_set_keymap('n', 'Y', 'y$', {noremap = true, silent = true})
+keymap('n', 'Y', 'y$', opt)
 
 -- Breakline to indent position
-vim.api.nvim_set_keymap('i', '<C-c>', '<CR><Esc>O', {noremap = true, silent = true})
+keymap('i', '<C-c>', '<CR><Esc>O', opt)
 
 -- PLUGINS
-local opt = {noremap = true, silent = true}
 
 -- Telescope
-vim.api.nvim_set_keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', opt)
-vim.api.nvim_set_keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', opt)
-vim.api.nvim_set_keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', opt)
-vim.api.nvim_set_keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)
+keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', opt)
+keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', opt)
+keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', opt)
+keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)
 
 -- Fugitive
-vim.api.nvim_set_keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
+keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
 
 -- Trouble
-vim.api.nvim_set_keymap('n', '<Leader>d', '<cmd>TroubleToggle<CR>', opt)
+keymap('n', '<Leader>d', '<cmd>TroubleToggle<CR>', opt)
 
 -- NvimTree
-vim.api.nvim_set_keymap('n', '<Space>e', ':NvimTreeToggle<CR>', opt)
+keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opt)

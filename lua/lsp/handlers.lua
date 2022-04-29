@@ -58,39 +58,31 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = {noremap = true, silent = true}
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+  local keymap = vim.api.nvim_buf_set_keymap
+  keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+  keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+  keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+  keymap(bufnr, "n", "gh", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
 
   -- Diagnostic
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[d",
-                              '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]d",
-                              '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+  keymap(bufnr, "n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+  keymap(bufnr, "n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
 
   -- LSP SAGA
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "Kf",
-                              "<cmd>lua require('lspsaga.provider').lsp_finder()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K",
-                              "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "Kd",
-                              "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>",
-                              opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ca",
-                              "<cmd>lua require'lspsaga.codeaction'.code_action()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rr",
-                              "<cmd>lua require'lspsaga.rename'.rename()<CR>", opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, "n", "[d", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>", opts)
+  keymap(bufnr, "n", "Kf", "<cmd>lua require('lspsaga.provider').lsp_finder()<CR>", opts)
+  keymap(bufnr, "n", "K", "<cmd>lua require('lspsaga.hover').render_hover_doc()<CR>", opts)
+  keymap(bufnr, "n", "Kd", "<cmd>lua require'lspsaga.diagnostic'.show_line_diagnostics()<CR>", opts)
+  keymap(bufnr, "n", "<leader>ca", "<cmd>lua require'lspsaga.codeaction'.code_action()<CR>", opts)
+  keymap(bufnr, "n", "<leader>rr", "<cmd>lua require'lspsaga.rename'.rename()<CR>", opts)
+  -- keymap(bufnr, "n", "[d", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_prev()<CR>", opts)
   -- vim.apgi.nvim_buf_set_keymap(bufnr, "n", "]d", "<cmd>lua require'lspsaga.diagnostic'.lsp_jump_diagnostic_next()<CR>", opts)
 
   -- Git Signs
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "[g", "<cmd>lua require'gitsigns'.prev_hunk()<CR>", opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "]g", "<cmd>lua require'gitsigns'.next_hunk()<CR>", opts)
+  keymap(bufnr, "n", "[g", "<cmd>lua require'gitsigns'.prev_hunk()<CR>", opts)
+  keymap(bufnr, "n", "]g", "<cmd>lua require'gitsigns'.next_hunk()<CR>", opts)
 
   -- Format
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>",
-                              opts)
+  keymap(bufnr, "n", "<leader>p", "<cmd>lua vim.lsp.buf.formatting_sync()<CR>", opts)
 
 end
 
