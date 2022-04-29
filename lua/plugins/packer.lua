@@ -77,6 +77,7 @@ return packer.startup(function(use)
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- LSP (Language Server Protocol)
   use "neovim/nvim-lspconfig" -- enable LSP
