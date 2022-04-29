@@ -1,7 +1,5 @@
 local status_ok, telescope = pcall(require, "telescope")
-if not status_ok then
-  return
-end
+if not status_ok then return end
 
 local actions = require "telescope.actions"
 
@@ -10,7 +8,7 @@ telescope.setup {
 
     prompt_prefix = "❯ ",
     selection_caret = "❯ ",
-    path_display = { "smart" },
+    path_display = {"smart"},
 
     mappings = {
       i = {
@@ -41,7 +39,7 @@ telescope.setup {
         ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
         ["<C-l>"] = actions.complete_tag,
-        ["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+        ["<C-_>"] = actions.which_key -- keys from pressing <C-/>
       },
 
       n = {
@@ -73,9 +71,9 @@ telescope.setup {
         ["<PageUp>"] = actions.results_scrolling_up,
         ["<PageDown>"] = actions.results_scrolling_down,
 
-        ["?"] = actions.which_key,
-      },
-    },
+        ["?"] = actions.which_key
+      }
+    }
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -92,7 +90,5 @@ telescope.setup {
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
-  },
+  }
 }
-
-
