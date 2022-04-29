@@ -78,6 +78,7 @@ return packer.startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- LSP (Language Server Protocol)
   use "neovim/nvim-lspconfig" -- enable LSP
@@ -107,6 +108,10 @@ return packer.startup(function(use)
   }
 
   -- Utils
+  use {
+    "numToStr/Comment.nvim",
+    tag = "v0.6"
+  }
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"
 
