@@ -71,6 +71,7 @@ return packer.startup(function(use)
   use {"nvim-telescope/telescope.nvim", tag = "nvim-0.6"}
   use 'kyazdani42/nvim-tree.lua'
   use 'goolord/alpha-nvim'
+  use "ahmedkhalf/project.nvim"
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
