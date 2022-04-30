@@ -70,6 +70,7 @@ return packer.startup(function(use)
   -- Navigation
   use {"nvim-telescope/telescope.nvim", tag = "nvim-0.6"}
   use 'kyazdani42/nvim-tree.lua'
+  use 'goolord/alpha-nvim'
 
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
