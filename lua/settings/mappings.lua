@@ -59,6 +59,7 @@ keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', opt)
 keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', opt)
 keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', opt)
 keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)
+keymap('n', '<Leader>fp', '<cmd>Telescope projects<CR>', opt)
 
 -- Fugitive
 keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
