@@ -1,3 +1,4 @@
+-- stardate (05 - 19 -2022)
 local fn = vim.fn
 
 -- Automatically install packer
@@ -55,21 +56,21 @@ return packer.startup(function(use)
   }
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
+  use {"hrsh7th/nvim-cmp", commit = "bba6fb67fdafc0af7c5454058dfbabc2182741f4"} -- The completion plugin (May 2)
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use {"saadparwaiz1/cmp_luasnip", commit = "75fa4e5dd4941407bb25e274953d8ea581e8b459"} -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
 
   -- snippets
-  use "L3MON4D3/LuaSnip" -- snippet engine
+  use {"L3MON4D3/LuaSnip", commit = "50760912f54dfd0087b29abef6ede39c33615ab9"} -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Navigation
   use {"nvim-telescope/telescope.nvim", tag = "nvim-0.6"}
-  use 'kyazdani42/nvim-tree.lua'
+  use {'kyazdani42/nvim-tree.lua', commit = "90d7b8edb1d715086b34572a0fb742faf23a271b"} -- (may 14)
   use 'goolord/alpha-nvim'
   use "ahmedkhalf/project.nvim"
 
@@ -79,7 +80,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
     commit = "b4ab9daed1f144200e826a656bd25b013f0949eb"
   }
-  use "nvim-treesitter/playground"
+  -- use "nvim-treesitter/playground"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
@@ -90,14 +91,7 @@ return packer.startup(function(use)
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters agnd linters
 
   -- Git
-  use {
-    "lewis6991/gitsigns.nvim",
-    config = function()
-      vim.cmd [[ highlight GitSignsChange guifg=#b8bb26 guibg=#3c3836 ]]
-      vim.cmd [[ highlight GitSignsAdd guifg=#8ec07c guibg=#3c3836 ]]
-      vim.cmd [[ highlight GitSignsDelete guifg=#fe8019 guibg=#3c3836 ]]
-    end
-  }
+  use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive" -- Vimscript
 
   -- Diagnostic
