@@ -80,7 +80,7 @@ return packer.startup(function(use)
     run = ":TSUpdate",
     commit = "b4ab9daed1f144200e826a656bd25b013f0949eb"
   }
-  -- use "nvim-treesitter/playground"
+  use {"nvim-treesitter/playground", commit = "13e2d2d63ce7bc5d875e8bdf89cb070bc8cc7a00"}
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
