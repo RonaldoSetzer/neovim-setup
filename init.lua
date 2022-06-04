@@ -11,4 +11,6 @@ require "plugins.autopairs"
 require "plugins.comment"
 require "plugins.alpha"
 require "plugins.project"
+require "plugins.vimwiki"
 require "lsp"
+vim.cmd('colorscheme kaiser')

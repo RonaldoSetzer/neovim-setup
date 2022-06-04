@@ -113,6 +113,7 @@ return packer.startup(function(use)
   use {"numToStr/Comment.nvim", tag = "v0.6"}
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"
+  use "vimwiki/vimwiki"
 
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
