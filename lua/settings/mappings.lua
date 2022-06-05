@@ -15,11 +15,14 @@ keymap('i', 'kk', '<Esc>', opt)
 keymap('i', 'kj', '<Esc>', opt)
 
 -- Map save to Ctrl + S
-keymap('n', '<C-s>', ':w<CR>', {silent = true})
+keymap('n', '<C-s>', '<cmd>w<CR>', {silent = true})
 keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', {silent = true})
 
 -- Map close buffer
-keymap('n', '<Leader>w', ':bd<CR>', opt)
+keymap('n', '<Leader>w', '<cmd>bd<CR>', opt)
+
+-- Map close quickfix
+keymap('n', '<Leader>c', '<cmd>cclose<CR>', opt)
 
 -- Navigation
 keymap('n', '<C-h>', '<C-w>h', {silent = true})
