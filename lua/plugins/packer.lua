@@ -39,14 +39,15 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
 
   -- Appearance
-  use {
-    "dragon-themes/kaiser.vim",
-    config = function()
-      vim.cmd('colorscheme kaiser')
-    end
-  }
+  use "dragon-themes/kaiser.vim"
   use "lukas-reineke/indent-blankline.nvim"
   use 'kyazdani42/nvim-web-devicons'
+  use {
+    'norcalli/nvim-colorizer.lua',
+    config = function()
+      require'colorizer'.setup()
+    end
+  }
   use {
     'nvim-lualine/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true},
