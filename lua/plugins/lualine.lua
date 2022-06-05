@@ -1,4 +1,5 @@
 local status_ok, lualine = pcall(require, "lualine")
+
 if not status_ok then return end
 
 local hide_in_width = function()
@@ -35,6 +36,8 @@ local branch = {"branch", icons_enabled = true, icon = ""}
 
 local location = {"location", padding = 0}
 
+local filename = {"filename", path = 1, symbols = {modified = "  "}}
+
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
@@ -51,7 +54,7 @@ lualine.setup({
   sections = {
     lualine_a = {mode},
     lualine_b = {branch},
-    lualine_c = {filetype, "filename"},
+    lualine_c = {filetype, filename},
     lualine_x = {diff, spaces},
     lualine_y = {location},
     lualine_z = {diagnostics}
@@ -59,7 +62,7 @@ lualine.setup({
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {"filename"},
+    lualine_c = {filename},
     lualine_x = {"location"},
     lualine_y = {},
     lualine_z = {}
