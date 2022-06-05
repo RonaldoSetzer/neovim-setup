@@ -10,6 +10,7 @@ vim.o.scrolloff = 3
 vim.o.clipboard = 'unnamed'
 vim.o.showtabline = 0
 vim.o.expandtab = true -- "Use spaces for indentation
+vim.o.tabstop = 2
 vim.o.shiftwidth = 2 -- "Use 2 spaces for indentation
 vim.o.pumheight = 10 -- Makes popup menu smaller
 vim.o.cmdheight = 2 -- More space for displaying messages
