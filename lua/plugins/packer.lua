@@ -112,6 +112,7 @@ return packer.startup(function(use)
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"
   use "vimwiki/vimwiki"
+  use 'lewis6991/impatient.nvim' -- improve startup
 
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
