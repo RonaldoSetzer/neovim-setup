@@ -63,6 +63,10 @@ keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', opt)
 keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', opt)
 keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)
 keymap('n', '<Leader>fp', '<cmd>Telescope projects<CR>', opt)
+keymap('n', '<Leader>fr', '<cmd>Telescope lsp_references<CR>', opt)
+keymap('n', '<Leader>fd', '<cmd>Telescope lsp_definitions<CR>', opt)
+
+keymap('n', '<Leader>fw', "<cmd>lua require'plugins.telescope'.vimwiki()<CR>", opt)
 
 -- Fugitive
 keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
