@@ -101,7 +101,7 @@ return packer.startup(function(use)
   }
   use {
     "rcarriga/nvim-notify",
-    commit = "c6ca279271f03db5ee03523d1c312ba624d3fa75",
+    -- commit = "c6ca279271f03db5ee03523d1c312ba624d3fa75",
     config = function()
       vim.notify = require("notify")
     end
