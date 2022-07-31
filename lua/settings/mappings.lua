@@ -30,6 +30,10 @@ keymap('n', '<C-j>', '<C-w>j', {silent = true})
 keymap('n', '<C-k>', '<C-w>k', {silent = true})
 keymap('n', '<C-l>', '<C-w>l', {silent = true})
 
+-- Resize window with shift + and shift -
+keymap('n', '_', '<c-w>5<', opt)
+keymap('n', '+', '<c-w>5>', opt)
+
 -- Remove newbie crutches in Normal and Visual Mode
 keymap('n', '<Down>', '<NOP>', opt)
 keymap('n', '<Left>', '<NOP>', opt)
