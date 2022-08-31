@@ -34,7 +34,7 @@ vim.wo.foldmethod = 'syntax' -- "When folding enabled, use syntax method
 
 -- Disable auto folding
 vim.api.nvim_exec([[ 
-  autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=manual foldlevelstart=99
+  autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=indent foldlevelstart=99
 ]], true)
 
 vim.api.nvim_exec([[
