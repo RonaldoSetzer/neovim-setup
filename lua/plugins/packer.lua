@@ -39,7 +39,7 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
 
   -- Appearance
-  use "dragon-themes/kaiser.vim"
+  use "dragon-themes/neovim"
   use "lukas-reineke/indent-blankline.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use {

@@ -14,4 +14,4 @@ require "plugins.alpha"
 require "plugins.project"
 require "plugins.vimwiki"
 require "lsp"
-vim.cmd('colorscheme kaiser')
+vim.cmd('colorscheme Rudra')
