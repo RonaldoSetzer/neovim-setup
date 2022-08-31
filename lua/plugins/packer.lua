@@ -79,7 +79,8 @@ return packer.startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
   use "nvim-treesitter/playground"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use "JoosepAlviste/nvim-ts-context-commentstring"
+  use "https://github.com/p00f/nvim-ts-rainbow"
 
   -- LSP (Language Server Protocol)
   use "neovim/nvim-lspconfig" -- enable LSP
