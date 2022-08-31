@@ -1,10 +1,6 @@
 local M = {}
 
 -- TODO: backfill this to template
-vim.cmd [[ highlight DiagnosticSignHint guifg=#b8bb26 guibg=#3c3836 ]]
-vim.cmd [[ highlight DiagnosticSignInfo guifg=#b8bb26 guibg=#3c3836 ]]
-vim.cmd [[ highlight DiagnosticSignWarn guifg=#8ec07c guibg=#3c3836 ]]
-vim.cmd [[ highlight DiagnosticSignError guifg=#fe8019 guibg=#3c3836 ]]
 M.setup = function()
   local signs = {
     {name = "DiagnosticSignError", text = " ✖"}, {name = "DiagnosticSignWarn", text = " ⚠"},
