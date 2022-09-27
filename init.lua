@@ -15,3 +15,6 @@ require "plugins.project"
 require "plugins.vimwiki"
 require "lsp"
 vim.cmd('colorscheme Rudra')
+
+-- Adjust colorscheme
+vim.cmd('hi Normal guibg=none') -- to add background transparent
