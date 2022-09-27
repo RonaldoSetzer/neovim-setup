@@ -18,3 +18,4 @@ vim.cmd('colorscheme Rudra')
 
 -- Adjust colorscheme
 vim.cmd('hi Normal guibg=none') -- to add background transparent
+vim.cmd('hi! link TelescopePromptPrefix Operator') -- by defaylt is linking with Identifier which uses italic but there are no italic devicon
