@@ -1,4 +1,5 @@
-require "impatient"
+local status_ok, impatient = pcall(require, "impatient")
+if status_ok then require "impatient" end
 require "settings.options"
 require "settings.mappings"
 require "plugins.packer"
