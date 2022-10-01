@@ -19,6 +19,7 @@ vim.o.backup = false -- "Enable saving swap file
 vim.o.writebackup = false -- Disable writing backup file
 vim.o.swapfile = false -- Enable creating swap file
 vim.o.updatetime = 300 -- Faster completion
+vim.o.splitright = true -- "Split to the right
 
 vim.bo.smartindent = true -- "Use smarter indenting
 
