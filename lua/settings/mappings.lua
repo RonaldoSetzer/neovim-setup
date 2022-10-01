@@ -80,3 +80,9 @@ keymap('n', '<Leader>d', '<cmd>TroubleToggle<CR>', opt)
 
 -- NvimTree
 keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opt)
+
+-- Abreviations
+vim.cmd("cabbrev help vert help")
+vim.cmd("cabbrev h vert h")
+vim.cmd("cabbrev Copilot vert Copilot")
+vim.cmd("cabbrev new vert new")
