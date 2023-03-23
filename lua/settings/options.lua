@@ -23,7 +23,6 @@ vim.o.splitright = true -- "Split to the right
 
 vim.bo.smartindent = true -- "Use smarter indenting
 
-vim.wo.t_Co = '256' -- Support 256 colors
 vim.wo.number = true -- Line numbers are good
 vim.wo.cursorline = true -- Highlight current line
 vim.wo.wrap = true -- Enable word wrap
