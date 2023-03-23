@@ -60,7 +60,7 @@ nvim_tree.setup {
           unmerged = "",
           renamed = "➜",
           deleted = "",
-          untracked = "U",
+          untracked = "",
           ignored = "◌"
         },
         folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
