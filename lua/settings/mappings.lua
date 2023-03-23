@@ -60,6 +60,8 @@ keymap('n', 'Y', 'y$', opt)
 keymap('i', '<C-c>', '<CR><Esc>O', opt)
 
 -- PLUGINS
+-- Treesitter
+keymap('n', '<Leader>ts', '<cmd>TSHighlightCapturesUnderCursor<CR>', opt)
 
 -- Telescope
 keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', opt)
