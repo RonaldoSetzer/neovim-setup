@@ -75,7 +75,12 @@ return packer.startup(function(use)
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Navigation
-  use "nvim-telescope/telescope.nvim"
+  use {
+     "nvim-telescope/telescope.nvim",
+    version = "*",
+    depends = { "plenary.nvim" }
+  }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function () return vim.fn.executable 'make' == 1 end }
   use 'kyazdani42/nvim-tree.lua' -- (may 14)
   use 'goolord/alpha-nvim'
   use "ahmedkhalf/project.nvim"
