@@ -40,6 +40,10 @@ return packer.startup(function(use)
 
   -- Appearance
   use "dragon-themes/neovim"
+  use "dragon-themes/kaiser.vim"
+  use "drewtempelmeyer/palenight.vim"
+  use "dracula/vim"
+  use "morhetz/gruvbox"
   use "lukas-reineke/indent-blankline.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use {
@@ -103,9 +107,11 @@ return packer.startup(function(use)
   }
   use {
     "rcarriga/nvim-notify",
-    -- commit = "c6ca279271f03db5ee03523d1c312ba624d3fa75",
     config = function()
       vim.notify = require("notify")
+      vim.notify.setup({
+        background_colour = "#000000",
+      })
     end
   }
 
