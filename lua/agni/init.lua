@@ -7,16 +7,16 @@ local agni = {
   yellow = "#fabd2f",
   --[[ green = "#83a598", ]]
   dark_yellow = "#d79921", -- nao usado
-  orange = "#fe8019", -- nao usado
+  orange = "#fe8019",      -- nao usado
   dark_orange = "#d65d0e",
   red = "#fb4934",
-  dark_red = "#cc241d", -- nao usado
+  dark_red = "#cc241d",     -- nao usado
   purple = "#d3869b",
   dark_primary = "#b16286", -- nao usado
   blue = "#fe8019",
-  green = "#458588", -- nao usado
+  green = "#458588",        -- nao usado
   aqua = "#8ec07c",
-  dark_aqua = "#689d6a", -- nao usado
+  dark_aqua = "#689d6a",    -- nao usado
   --[[ green = "#b8bb26", ]]
   --[[ yellow = "#b8bb26", ]]
   dark_green = "#98971a", -- nao usado
@@ -30,18 +30,18 @@ local kaiser = {
   white = "#d5c4a1",
   yellow = "#fabd2f",
   dark_yellow = "#d79921", -- nao usado
-  orange = "#fe8019", -- nao usado
+  orange = "#fe8019",      -- nao usado
   dark_orange = "#d65d0e",
   red = "#fb4934",
-  dark_red = "#cc241d", -- nao usado
+  dark_red = "#cc241d",     -- nao usado
   purple = "#d3869b",
   dark_primary = "#b16286", -- nao usado
   blue = "#83a598",
-  dark_blue = "#458588", -- nao usado
+  dark_blue = "#458588",    -- nao usado
   aqua = "#8ec07c",
-  dark_aqua = "#689d6a", -- nao usado
+  dark_aqua = "#689d6a",    -- nao usado
   green = "#b8bb26",
-  dark_green = "#98971a", -- nao usado
+  dark_green = "#98971a",   -- nao usado
   grey = "#a89984",
   dark_grey = "#7c6f64"
 }
@@ -56,18 +56,18 @@ local rudra = {
   --[[ white = "#d0d0d0", ]]
   yellow = "#82aaff",
   dark_yellow = "#d79921", -- nao usado
-  orange = "#fe8019", -- nao usado
+  orange = "#fe8019",      -- nao usado
   dark_orange = "#d65d0e",
   red = "#fb4934",
-  dark_red = "#cc241d", -- nao usado
+  dark_red = "#cc241d",     -- nao usado
   purple = "#d3869b",
   dark_primary = "#b16286", -- nao usado
   blue = "#c792ea",
-  dark_blue = "#458588", -- nao usado
+  dark_blue = "#458588",    -- nao usado
   aqua = "#c3e88d",
-  dark_aqua = "#689d6a", -- nao usado
+  dark_aqua = "#689d6a",    -- nao usado
   green = "#89ddff",
-  dark_green = "#98971a", -- nao usado
+  dark_green = "#98971a",   -- nao usado
   grey = "#767ba4",
   dark_grey = "#7c6f64"
 }
@@ -78,18 +78,18 @@ local rudra2 = {
   white = "#d0d0d0",
   dark_orange = "#82aaff",
   dark_yellow = "#d79921", -- nao usado
-  green = "#c3e88d", -- nao usado
+  green = "#c3e88d",       -- nao usado
   orange = "#d65d0e",
   red = "#fb4934",
-  dark_red = "#cc241d", -- nao usado
+  dark_red = "#cc241d",     -- nao usado
   purple = "#d3869b",
   dark_primary = "#b16286", -- nao usado
   blue = "#c792ea",
-  dark_blue = "#458588", -- nao usado
+  dark_blue = "#458588",    -- nao usado
   aqua = "#ff8b92",
-  dark_aqua = "#689d6a", -- nao usado
+  dark_aqua = "#689d6a",    -- nao usado
   yellow = "#89ddff",
-  dark_green = "#98971a", -- nao usado
+  dark_green = "#98971a",   -- nao usado
   grey = "#767ba4",
   dark_grey = "#7c6f64"
 }
@@ -99,21 +99,16 @@ local pallet = {
   -- gradient block
   background = ansi.black,
   foreground = ansi.white,
-
   primary = ansi.blue,
   secondary = ansi.yellow,
   tertiary = ansi.green,
-
   number = ansi.purple,
   text = ansi.aqua,
   comment = ansi.grey,
-
   punctuation = ansi.grey,
   visual = ansi.dark_blue,
-
   ui1 = ansi.black2,
   ui2 = ansi.black3,
-
   warning = ansi.dark_grey,
   info = ansi.dark_aqua,
   danger = ansi.red
@@ -137,28 +132,28 @@ local theme = {
     Label = { fg = c.primary }, -- REVIEW
     Operator = { fg = c.primary },
     Keyword = { fg = c.primary, style = "i" },
-    Exception = { fg = c.primary }, -- REVIEW
+    Exception = { fg = c.primary },            -- REVIEW
     Include = { fg = c.primary, style = "i" }, -- REVIEW
     --[[ Title = { fg = c.primary }, ]]
     Type = { fg = c.tertiary },
-    SpecialComment = { fg = c.comments, style = "b" }, -- REVIEW
+    SpecialComment = { fg = c.comments, style = "b" },           -- REVIEW
     Todo = { fg = c.tertiary, bg = c.background, style = "ri" }, -- REVIEW
-    Underlined = { fg = c.foreground, style = "u" }, -- REVIEW
+    Underlined = { fg = c.foreground, style = "u" },             -- REVIEW
     ColorColumn = { fg = c.background, bg = c.ui1 },
     CursorLineNr = { fg = c.secondary },
     SignColumn = { fg = c.background, bg = c.ui1 },
     Conceal = { fg = c.primary }, -- REVIEW
     CursorColumn = { bg = c.ui1 },
     CursorLine = { bg = c.ui1 },
-    Directory = { fg = c.primary }, -- REVIEW
-    DiffAdd = { fg = c.info, bg = c.background, style = "ri" }, -- REVIEW
-    DiffAdded = { fg = c.info }, -- REVIEW
+    Directory = { fg = c.primary },                                   -- REVIEW
+    DiffAdd = { fg = c.info, bg = c.background, style = "ri" },       -- REVIEW
+    DiffAdded = { fg = c.info },                                      -- REVIEW
     DiffChange = { fg = c.warning, bg = c.background, style = "ri" }, -- REVIEW
-    DiffChanged = { fg = c.warning }, -- REVIEW
-    DiffDelete = { fg = c.danger, bg = c.background, style = "ri" }, -- REVIEW
-    DiffRemoved = { fg = c.danger }, -- REVIEW
-    DiffText = { fg = c.background, bg = c.warning, style = "ri" }, -- REVIEW
-    ErrorMsg = { bg = c.danger }, -- REVIEW
+    DiffChanged = { fg = c.warning },                                 -- REVIEW
+    DiffDelete = { fg = c.danger, bg = c.background, style = "ri" },  -- REVIEW
+    DiffRemoved = { fg = c.danger },                                  -- REVIEW
+    DiffText = { fg = c.background, bg = c.warning, style = "ri" },   -- REVIEW
+    ErrorMsg = { bg = c.danger },                                     -- REVIEW
     VertSplit = { fg = c.background, bg = c.ui1 },
     Folded = { fg = c.comment, bg = c.ui1, style = "i" },
     FoldColumn = { fg = c.ui2, bg = c.ui2 },
@@ -307,7 +302,6 @@ function M.colorscheme()
   vim.g.colors_name = 'agni'
 
   for _, h in pairs(theme) do load(h) end
-
 end
 
 return M

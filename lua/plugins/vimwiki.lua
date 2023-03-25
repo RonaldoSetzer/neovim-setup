@@ -1,4 +1,4 @@
-vim.g.vimwiki_list = {{path = '~/Documents/vimwiki/', syntax = 'markdown', ext = '.md'}}
+vim.g.vimwiki_list = { { path = '~/Documents/vimwiki/', syntax = 'markdown', ext = '.md' } }
 
 -- local vw_pickers = require 'telescope._extensions.vimwiki.pickers'
 --

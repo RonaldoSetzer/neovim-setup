@@ -27,7 +27,7 @@ if not status_ok then return end
 packer.init {
   display = {
     open_fn = function()
-      return require("packer.util").float {border = "rounded"}
+      return require("packer.util").float { border = "rounded" }
     end
   }
 }
@@ -49,44 +49,45 @@ return packer.startup(function(use)
   use {
     'norcalli/nvim-colorizer.lua',
     config = function()
-      require'colorizer'.setup()
+      require 'colorizer'.setup()
     end
   }
   use {
     'nvim-lualine/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true},
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
     config = function()
       require 'plugins.lualine'
     end
   }
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin (May 2)
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/nvim-cmp"         -- The completion plugin (May 2)
+  use "hrsh7th/cmp-buffer"       -- buffer completions
+  use "hrsh7th/cmp-path"         -- path completions
+  use "hrsh7th/cmp-cmdline"      -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  
+
   -- snippets
   use "github/copilot.vim"
-  use "L3MON4D3/LuaSnip" -- snippet engine
+  use "L3MON4D3/LuaSnip"             -- snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- Navigation
   use {
-     "nvim-telescope/telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     version = "*",
     requires = { "plenary.nvim" }
   }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function () return vim.fn.executable 'make' == 1 end }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function() return vim.fn.executable 'make' ==
+    1 end }
   use 'kyazdani42/nvim-tree.lua' -- (may 14)
   use 'goolord/alpha-nvim'
   use "ahmedkhalf/project.nvim"
 
   -- Treesitter
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use "nvim-treesitter/playground"
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "JoosepAlviste/nvim-ts-context-commentstring"
@@ -102,7 +103,6 @@ return packer.startup(function(use)
   }
   use 'tami5/lspsaga.nvim'
   --[[ use "jose-elias-alvarez/null-ls.nvim" -- for formatters agnd linters ]]
-
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive" -- Vimscript

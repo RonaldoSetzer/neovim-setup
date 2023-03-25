@@ -6,7 +6,7 @@ require('mason-lspconfig').setup()
 
 local signs = {
   { name = "DiagnosticSignError", text = " ✖" }, { name = "DiagnosticSignWarn", text = " ⚠" },
-  { name = "DiagnosticSignHint", text = " " }, { name = "DiagnosticSignInfo", text = " ℹ" }
+  { name = "DiagnosticSignHint",  text = " " }, { name = "DiagnosticSignInfo", text = " ℹ" }
 }
 
 for _, sign in ipairs(signs) do
@@ -38,7 +38,7 @@ local servers = {
   tsserver = {},
   lua_ls = {
     Lua = {
-      diagnostics = { globals = {"vim"} },
+      diagnostics = { globals = { "vim" } },
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
     },
@@ -93,13 +93,13 @@ local on_attach = function(_, bufnr)
   -- LSP SAGA
   nmap("Kf", require('lspsaga.provider').lsp_finder, 'LSP Finder')
   nmap("K", require('lspsaga.hover').render_hover_doc, 'Hover Documentation')
-  nmap("Kd", require'lspsaga.diagnostic'.show_line_diagnostics, 'Line Diagnostics')
-  nmap("<leader>ca", require'lspsaga.codeaction'.code_action, 'Code Action')
-  nmap("<leader>rr", require'lspsaga.rename'.rename, 'Rename')
+  nmap("Kd", require 'lspsaga.diagnostic'.show_line_diagnostics, 'Line Diagnostics')
+  nmap("<leader>ca", require 'lspsaga.codeaction'.code_action, 'Code Action')
+  nmap("<leader>rr", require 'lspsaga.rename'.rename, 'Rename')
 
   -- Git Signs
-  nmap("[g", require'gitsigns'.prev_hunk, 'Previous Git Hunk')
-  nmap("]g", require'gitsigns'.next_hunk, 'Next Git Hunk')
+  nmap("[g", require 'gitsigns'.prev_hunk, 'Previous Git Hunk')
+  nmap("]g", require 'gitsigns'.next_hunk, 'Next Git Hunk')
   --
   -- Format
   nmap("<leader>p", vim.lsp.buf.format, 'Format')

@@ -4,13 +4,13 @@ require("nvim-treesitter.configs").setup {
     'regex', 'scss', 'svelte', 'tsx', 'typescript', 'vim', 'vue', 'yaml'
   },
   sync_install = false,
-  ignore_install = {""}, -- List of parsers to ignore installing
+  ignore_install = { "" }, -- List of parsers to ignore installing
   highlight = {
-    enable = true, -- false will disable the whole extension
-    disable = {""}, -- list of language that will be disabled
+    enable = true,       -- false will disable the whole extension
+    disable = { "" },    -- list of language that will be disabled
     additional_vim_regex_highlighting = true
   },
-  context_commentstring = {enable = true},
+  context_commentstring = { enable = true },
   --[[ rainbow = {enable = true, colors = {'#ffd701', "#da70d6", "#179fff"}}, ]]
-  indent = {enable = true, disable = {"yaml"}}
+  indent = { enable = true, disable = { "yaml" } }
 }

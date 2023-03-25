@@ -1,4 +1,4 @@
-local opt = {noremap = true, silent = true}
+local opt = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
 -- Map for LeaderKey key
@@ -15,8 +15,8 @@ keymap('i', 'kk', '<Esc>', opt)
 keymap('i', 'kj', '<Esc>', opt)
 
 -- Map save to Ctrl + S
-keymap('n', '<C-s>', '<cmd>w<CR>', {silent = true})
-keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', {silent = true})
+keymap('n', '<C-s>', '<cmd>w<CR>', { silent = true })
+keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', { silent = true })
 
 -- Map close buffer
 keymap('n', '<Leader>w', '<cmd>bd<CR>', opt)
@@ -25,10 +25,10 @@ keymap('n', '<Leader>w', '<cmd>bd<CR>', opt)
 keymap('n', '<Leader>c', '<cmd>cclose<CR>', opt)
 
 -- Navigation
-keymap('n', '<C-h>', '<C-w>h', {silent = true})
-keymap('n', '<C-j>', '<C-w>j', {silent = true})
-keymap('n', '<C-k>', '<C-w>k', {silent = true})
-keymap('n', '<C-l>', '<C-w>l', {silent = true})
+keymap('n', '<C-h>', '<C-w>h', { silent = true })
+keymap('n', '<C-j>', '<C-w>j', { silent = true })
+keymap('n', '<C-k>', '<C-w>k', { silent = true })
+keymap('n', '<C-l>', '<C-w>l', { silent = true })
 
 -- Resize window with shift + and shift -
 keymap('n', '_', '<c-w>5<', opt)

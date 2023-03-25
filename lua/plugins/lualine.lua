@@ -8,9 +8,9 @@ end
 
 local diagnostics = {
   "diagnostics",
-  sources = {"nvim_diagnostic"},
-  sections = {"error", "warn"},
-  symbols = {error = " ", warn = " "},
+  sources = { "nvim_diagnostic" },
+  sections = { "error", "warn" },
+  symbols = { error = " ", warn = " " },
   colored = false,
   update_in_insert = false,
   always_visible = true
@@ -19,7 +19,7 @@ local diagnostics = {
 local diff = {
   "diff",
   colored = false,
-  symbols = {added = " ", modified = " ", removed = " "}, -- changes diff symbols
+  symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
   cond = hide_in_width
 }
 
@@ -30,13 +30,13 @@ local mode = {
   end
 }
 
-local filetype = {"filetype", icons_enabled = true, icon_only = true}
+local filetype = { "filetype", icons_enabled = true, icon_only = true }
 
-local branch = {"branch", icons_enabled = true, icon = ""}
+local branch = { "branch", icons_enabled = true, icon = "" }
 
-local location = {"location", padding = 0}
+local location = { "location", padding = 0 }
 
-local filename = {"filename", path = 1, symbols = {modified = "  "}}
+local filename = { "filename", path = 1, symbols = { modified = "  " } }
 
 local spaces = function()
   return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
@@ -46,24 +46,24 @@ lualine.setup({
   options = {
     icons_enabled = true,
     theme = "auto",
-    component_separators = {left = "", right = ""},
-    section_separators = {left = "", right = ""},
-    disabled_filetypes = {"alpha", "dashboard", "NvimTree", "Outline"},
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
     always_divide_middle = true
   },
   sections = {
-    lualine_a = {mode},
-    lualine_b = {branch},
-    lualine_c = {filetype, filename},
-    lualine_x = {diff, spaces},
-    lualine_y = {location},
-    lualine_z = {diagnostics}
+    lualine_a = { mode },
+    lualine_b = { branch },
+    lualine_c = { filetype, filename },
+    lualine_x = { diff, spaces },
+    lualine_y = { location },
+    lualine_z = { diagnostics }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
-    lualine_c = {filename},
-    lualine_x = {"location"},
+    lualine_c = { filename },
+    lualine_x = { "location" },
     lualine_y = {},
     lualine_z = {}
   },
