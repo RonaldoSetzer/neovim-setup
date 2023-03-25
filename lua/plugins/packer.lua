@@ -78,7 +78,7 @@ return packer.startup(function(use)
   use {
      "nvim-telescope/telescope.nvim",
     version = "*",
-    depends = { "plenary.nvim" }
+    requires = { "plenary.nvim" }
   }
   use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function () return vim.fn.executable 'make' == 1 end }
   use 'kyazdani42/nvim-tree.lua' -- (may 14)
@@ -93,10 +93,15 @@ return packer.startup(function(use)
   use "https://github.com/p00f/nvim-ts-rainbow"
 
   -- LSP (Language Server Protocol)
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+  use { -- LSP Configuration & Plugins
+    'neovim/nvim-lspconfig',
+    requires = {
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+    },
+  }
   use 'tami5/lspsaga.nvim'
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters agnd linters
+  --[[ use "jose-elias-alvarez/null-ls.nvim" -- for formatters agnd linters ]]
 
   -- Git
   use "lewis6991/gitsigns.nvim"
