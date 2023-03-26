@@ -96,7 +96,6 @@ return packer.startup(function(use)
     }
   }
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "https://github.com/p00f/nvim-ts-rainbow"
 
   -- LSP (Language Server Protocol)
   use {

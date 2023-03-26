@@ -26,6 +26,7 @@ keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', '• Save: Save current file')
 
 -- Map close buffer
 keymap('n', '<Leader>w', '<cmd>bd<CR>', '• Buffer: Close current buffer')
+keymap('n', '<Leader>W', '<cmd>%bd<CR>', '• Buffer: Close all buffers')
 
 -- Map close quickfix
 keymap('n', '<Leader>c', '<cmd>cclose<CR>', '• Quickfix: Close quickfix')

@@ -11,6 +11,5 @@ require("nvim-treesitter.configs").setup {
     additional_vim_regex_highlighting = true
   },
   context_commentstring = { enable = true },
-  rainbow = { enable = true, colors = { '#fabd2f', "#d3869b", "#458588" } },
   indent = { enable = true, disable = { "yaml" } },
 }
