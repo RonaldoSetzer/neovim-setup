@@ -1,4 +1,4 @@
--- stardate (05 - 16 -2022)
+-- stardate (05 - 16 -2022)mana
 local fn = vim.fn
 
 -- Automatically install packer
@@ -15,7 +15,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost packer.lua source <afile> | PackerSync
+    autocmd BufWritePost plugins-manager.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -80,21 +80,26 @@ return packer.startup(function(use)
     version = "*",
     requires = { "plenary.nvim" }
   }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function() return vim.fn.executable 'make' ==
-    1 end }
+  use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function()
+    return vim.fn.executable 'make' ==
+        1
+  end }
   use 'kyazdani42/nvim-tree.lua' -- (may 14)
   use 'goolord/alpha-nvim'
   use "ahmedkhalf/project.nvim"
 
   -- Treesitter
-  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
-  use "nvim-treesitter/playground"
+  use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
+    requires = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+      'nvim-treesitter/playground'
+    }
+  }
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-  use "JoosepAlviste/nvim-ts-context-commentstring"
   use "https://github.com/p00f/nvim-ts-rainbow"
 
   -- LSP (Language Server Protocol)
-  use { -- LSP Configuration & Plugins
+  use {
     'neovim/nvim-lspconfig',
     requires = {
       'williamboman/mason.nvim',
@@ -129,7 +134,6 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"
-  use "vimwiki/vimwiki"
   use 'lewis6991/impatient.nvim' -- improve startup
 
   if PACKER_BOOTSTRAP then require("packer").sync() end

@@ -2,19 +2,9 @@ local status_ok = pcall(require, "impatient")
 if status_ok then require "impatient" end
 require "settings.options"
 require "settings.mappings"
-require "plugins.packer"
-require "plugins.cmp"
-require "plugins.treesitter"
-require "plugins.telescope"
-require "plugins.gitsigns"
-require "plugins.indent-blankline"
-require "plugins.nvim-tree"
-require "plugins.autopairs"
-require "plugins.comment"
-require "plugins.alpha"
-require "plugins.project"
-require "plugins.vimwiki"
-require "lsp"
+require "core"
+require "plugins"
+
 vim.cmd('colorscheme agni')
 
 -- Adjust colorscheme

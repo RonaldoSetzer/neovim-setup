@@ -1,87 +1,64 @@
-local opt = { noremap = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
+local keymap = function(mode, keys, func, desc)
+  local opts = {
+    noremap = true,
+    silent = true,
+    desc = desc
+  }
+  vim.keymap.set(mode, keys, func, opts)
+end
 
 -- Map for LeaderKey key
-keymap('n', '<Space>', '<NOP>', opt)
+keymap('n', '<Space>', '<NOP>', '• LeaderKey: Set LeaderKey')
 vim.g.mapleader = ' '
 
 -- Clear highlight on pressing ESC
-keymap('n', '<esc>', '<cmd>noh<CR><esc>', opt)
+keymap('n', '<esc>', '<cmd>noh<CR><esc>', '• Highlight: Clear highlight')
 
 -- Map jk, jj, kj for exit to normal mode
-keymap('i', 'jk', '<Esc>', opt)
-keymap('i', 'jj', '<Esc>', opt)
-keymap('i', 'kk', '<Esc>', opt)
-keymap('i', 'kj', '<Esc>', opt)
+keymap('i', 'jk', '<Esc>', '• Exit: Exit insert mode')
+keymap('i', 'jj', '<Esc>', '• Exit: Exit insert mode')
+keymap('i', 'kk', '<Esc>', '• Exit: Exit insert mode')
+keymap('i', 'kj', '<Esc>', '• Exit: Exit insert mode')
 
 -- Map save to Ctrl + S
-keymap('n', '<C-s>', '<cmd>w<CR>', { silent = true })
-keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', { silent = true })
+keymap('n', '<C-s>', '<cmd>w<CR>', '• Save: Save current file')
+keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', '• Save: Save current file')
 
 -- Map close buffer
-keymap('n', '<Leader>w', '<cmd>bd<CR>', opt)
+keymap('n', '<Leader>w', '<cmd>bd<CR>', '• Buffer: Close current buffer')
 
 -- Map close quickfix
-keymap('n', '<Leader>c', '<cmd>cclose<CR>', opt)
+keymap('n', '<Leader>c', '<cmd>cclose<CR>', '• Quickfix: Close quickfix')
 
 -- Navigation
-keymap('n', '<C-h>', '<C-w>h', { silent = true })
-keymap('n', '<C-j>', '<C-w>j', { silent = true })
-keymap('n', '<C-k>', '<C-w>k', { silent = true })
-keymap('n', '<C-l>', '<C-w>l', { silent = true })
+keymap('n', '<C-h>', '<C-w>h', '• Navigation: Move to left window')
+keymap('n', '<C-j>', '<C-w>j', '• Navigation: Move to bottom window')
+keymap('n', '<C-k>', '<C-w>k', '• Navigation: Move to top window')
+keymap('n', '<C-l>', '<C-w>l', '• Navigation: Move to right window')
+keymap('n', '<TAB>', '<cmd>bnext<CR>', '• Navigation: Switch to next buffer')
+keymap('n', '<S-TAB>', '<cmd>bprevious<CR>', '• Navigation: Switch to previous buffer')
 
 -- Resize window with shift + and shift -
-keymap('n', '_', '<c-w>5<', opt)
-keymap('n', '+', '<c-w>5>', opt)
+keymap('n', '_', '<c-w>5<', '• Resize: Shrink window vertically')
+keymap('n', '+', '<c-w>5>', '• Resize: Expand window vertically')
 
 -- Remove newbie crutches in Normal and Visual Mode
-keymap('n', '<Down>', '<NOP>', opt)
-keymap('n', '<Left>', '<NOP>', opt)
-keymap('n', '<Right>', '<NOP>', opt)
-keymap('n', '<Up>', '<NOP>', opt)
+keymap('n', '<Down>', '<NOP>', '• Disable: Arrow Down on Normal Mode')
+keymap('n', '<Left>', '<NOP>', '• Disable: Arrow Left on Normal Mode')
+keymap('n', '<Right>', '<NOP>', '• Disable: Arrow Right on Normal Mode')
+keymap('n', '<Up>', '<NOP>', '• Disable: Arrow Up on Normal Mode')
 
-keymap('v', '<Down>', '<NOP>', opt)
-keymap('v', '<Left>', '<NOP>', opt)
-keymap('v', '<Right>', '<NOP>', opt)
-keymap('v', '<Up>', '<NOP>', opt)
-
--- Swtich buffers with Tab
-keymap('n', '<TAB>', ':bnext<CR>', opt)
-keymap('n', '<S-TAB>', ':bprevious<CR>', opt)
+keymap('v', '<Down>', '<NOP>', '• Disable: Arrow Down on Visual Mode')
+keymap('v', '<Left>', '<NOP>', '• Disable: Arrow Left on Visual Mode')
+keymap('v', '<Right>', '<NOP>', '• Disable: Arrow Right on Visual Mode')
+keymap('v', '<Up>', '<NOP>', '• Disable: Arrow Up on Visual Mode')
 
 -- Improve indenting (visual)
-keymap('v', '<', '<gv', opt)
-keymap('v', '>', '>gv', opt)
+keymap('v', '<', '<gv', '• Indenting: Shift left')
+keymap('v', '>', '>gv', '• Indenting: Shift right')
 
 -- Yank to the end of the line
-keymap('n', 'Y', 'y$', opt)
-
--- Breakline to indent position
-keymap('i', '<C-c>', '<CR><Esc>O', opt)
-
--- PLUGINS
--- Treesitter
-keymap('n', '<Leader>ts', '<cmd>TSHighlightCapturesUnderCursor<CR>', opt)
-
--- Telescope
-keymap('n', '<Leader>ff', '<cmd>Telescope find_files<CR>', opt)
-keymap('n', '<Leader>fg', '<cmd>Telescope live_grep<CR>', opt)
-keymap('n', '<Leader>fb', '<cmd>Telescope buffers<CR>', opt)
-keymap('n', '<Leader>fh', '<cmd>Telescope help_tags<CR>', opt)
-keymap('n', '<Leader>fp', '<cmd>Telescope projects<CR>', opt)
-keymap('n', '<Leader>fr', '<cmd>Telescope lsp_references<CR>', opt)
-keymap('n', '<Leader>fd', '<cmd>Telescope lsp_definitions<CR>', opt)
-
-keymap('n', '<Leader>fw', "<cmd>lua require'plugins.telescope'.vimwiki()<CR>", opt)
-
--- Fugitive
-keymap('n', '<Leader>g', '<cmd>tab G<CR>', opt)
-
--- Trouble
-keymap('n', '<Leader>d', '<cmd>TroubleToggle<CR>', opt)
-
--- NvimTree
-keymap('n', '<Leader>e', ':NvimTreeToggle<CR>', opt)
+keymap('n', 'Y', 'y$', '• Yank: Yank to the end of the line')
 
 -- Abreviations
 vim.cmd("cabbrev help vert help")
