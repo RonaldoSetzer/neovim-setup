@@ -103,10 +103,10 @@ return packer.startup(function(use)
     requires = {
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      'tami5/lspsaga.nvim'
     },
   }
-  use 'tami5/lspsaga.nvim'
-  --[[ use "jose-elias-alvarez/null-ls.nvim" -- for formatters agnd linters ]]
+
   -- Git
   use "lewis6991/gitsigns.nvim"
   use "tpope/vim-fugitive" -- Vimscript
