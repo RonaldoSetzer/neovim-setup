@@ -1,4 +1,4 @@
-require "plugins.gitsigns"
+require "plugins.git"
 require "plugins.indent-blankline"
 require "plugins.nvim-tree"
 require "plugins.autopairs"
