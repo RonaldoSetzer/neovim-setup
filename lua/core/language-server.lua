@@ -52,7 +52,9 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
-local on_attach = function(_, bufnr)
+local on_attach = function(client, bufnr)
+  client.server_capabilities.semanticTokensProvider = nil
+
   local nmap = function(keys, func, desc)
     vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
@@ -95,6 +97,7 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
+--[[ client.server_capabilities.semanticTokensProvider = nil ]]
 -- From old config
 --if client.name == "sumneko_lua" then client.server_capabilities.document_formatting = false end
 --if client.name == "tsserver" then client.server_capabilities.document_formatting = false end
