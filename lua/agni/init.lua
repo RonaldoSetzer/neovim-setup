@@ -118,7 +118,7 @@ local c = pallet
 local theme = {
   base = {
     Normal = { fg = c.foreground, bg = c.background },
-    Comment = { fg = c.comments, style = "i" },
+    Comment = { fg = c.comment, style = "i" },
     Constant = { fg = c.foreground, style = "b" },
     String = { fg = c.text, style = "b" },
     Number = { fg = c.number },
@@ -136,7 +136,7 @@ local theme = {
     Include = { fg = c.primary, style = "i" }, -- REVIEW
     --[[ Title = { fg = c.primary }, ]]
     Type = { fg = c.tertiary },
-    SpecialComment = { fg = c.comments, style = "b" },           -- REVIEW
+    SpecialComment = { fg = c.comment, style = "b" },           -- REVIEW
     Todo = { fg = c.tertiary, bg = c.background, style = "ri" }, -- REVIEW
     Underlined = { fg = c.foreground, style = "u" },             -- REVIEW
     ColorColumn = { fg = c.background, bg = c.ui1 },
@@ -248,11 +248,15 @@ local theme = {
     jsonQuote = { fg = c.comment, style = "i" },
     jsonnoQuotesError = { fg = c.comment, style = "i" },
     jsonFold = { fg = c.comment, style = "i" },
+    jsonCommentError = { fg = c.comment, style = "ib" },
   },
   GitSigns = {
     GitSignsChange = { fg = c.warning, bg = c.ui1 },
     GitSignsAdd = { fg = c.info, bg = c.ui1 },
     GitSignsDelete = { fg = c.danger, bg = c.ui1 }
+  },
+  telescope = {
+    TelescopePromptPrefix = { fg = c.primary },
   },
   LSP = {
     DiagnosticSignHint = { fg = c.info, bg = c.ui1 },
