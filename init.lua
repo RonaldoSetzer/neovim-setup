@@ -5,7 +5,7 @@ require "settings.mappings"
 require "core"
 require "plugins"
 
-vim.cmd('colorscheme agni')
+vim.cmd('colorscheme kaiser')
 
 -- Adjust colorscheme
 --[[ vim.cmd('hi Normal ctermbg=NONE guibg=NONE') -- to add background transparent ]]
