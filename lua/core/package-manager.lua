@@ -15,7 +15,7 @@ end
 vim.cmd [[
   augroup packer_user_config
     autocmd!
-    autocmd BufWritePost plugins-manager.lua source <afile> | PackerSync
+    autocmd BufWritePost package-manager.lua source <afile> | PackerSync
   augroup end
 ]]
 
@@ -39,11 +39,11 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
 
   -- Appearance
-  use "dragon-themes/neovim"
-  use "dragon-themes/kaiser.vim"
-  use "drewtempelmeyer/palenight.vim"
-  use "dracula/vim"
-  use "morhetz/gruvbox"
+  --[[ use "dragon-themes/neovim" ]]
+  --[[ use "dragon-themes/kaiser.vim" ]]
+  --[[ use "drewtempelmeyer/palenight.vim" ]]
+  --[[ use "dracula/vim" ]]
+  --[[ use "morhetz/gruvbox" ]]
   use "lukas-reineke/indent-blankline.nvim"
   use 'kyazdani42/nvim-web-devicons'
   use {
