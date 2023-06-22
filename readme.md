@@ -1,6 +1,6 @@
 # Neovim Setup
 
-![dashboard](screenschots/00-deshboard.png)
+![dashboard](screenshots/00-dashboard.png)
 
 ## TODO
 
@@ -39,7 +39,7 @@
 
 ### Package Manager
 
-![plugin-manager](screenschots/05-plugin-manager.png)
+![plugin-manager](screenshots/05-plugin-manager.png)
 
 - This setup uses [packer.nvim](https://github.com/wbthomason/packer.nvim) as a plugin manager
 - All plugins are setup on the `lua/core/package-manager.lua` file
@@ -48,7 +48,7 @@
 
 ### Autocomplete
 
-![completion](screenschots/02-completion.png)
+![completion](screenshots/02-completion.png)
 
 - the completion engine is [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
@@ -80,8 +80,8 @@
 
 ### fuzzy-finder
 
-![navigation](screenschots/01-navigation.png)
-![navigation](screenschots/01-navigation-grep.png)
+![navigation](screenshots/01-navigation.png)
+![navigation](screenshots/01-navigation-grep.png)
 
 - [Telescope](https://github.com/nnvim-telescope/telescope.nvim)
 - [telescope-fzf-native.nvim](https://github.com/nnvim-telescope/telescope-fzf-native.nvim)
@@ -89,9 +89,9 @@
 
 ### language-server
 
-![lsp](screenschots/03-lsp-codeaction.png)
-![diagnostic](screenschots/04-diagnostic-hover.png)
-![diagnostic](screenschots/04-diagnostic.png)
+![lsp](screenshots/03-lsp-codeaction.png)
+![diagnostic](screenshots/04-diagnostic-hover.png)
+![diagnostic](screenshots/04-diagnostic.png)
 
 As a language-server engine, the setup uses lsp and mason as language installer
 
