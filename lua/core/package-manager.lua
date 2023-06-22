@@ -41,18 +41,18 @@ return packer.startup(function(use)
   -- Appearance
   use "dragon-themes/neovim"
   use "lukas-reineke/indent-blankline.nvim"
-  use 'kyazdani42/nvim-web-devicons'
+  use "kyazdani42/nvim-web-devicons"
   use {
-    'norcalli/nvim-colorizer.lua',
+    "norcalli/nvim-colorizer.lua",
     config = function()
-      require 'colorizer'.setup()
+      require "colorizer".setup()
     end
   }
   use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    "nvim-lualine/lualine.nvim",
+    requires = { "kyazdani42/nvim-web-devicons", opt = true },
     config = function()
-      require 'plugins.lualine'
+      require "plugins.lualine"
     end
   }
 
@@ -76,30 +76,30 @@ return packer.startup(function(use)
     version = "*",
     requires = { "plenary.nvim" }
   }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = function()
-    return vim.fn.executable 'make' ==
+  use { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = function()
+    return vim.fn.executable "make" ==
         1
   end }
-  use 'kyazdani42/nvim-tree.lua' -- (may 14)
-  use 'goolord/alpha-nvim'
+  use "kyazdani42/nvim-tree.lua" -- (may 14)
+  use "goolord/alpha-nvim"
   use "ahmedkhalf/project.nvim"
 
   -- Treesitter
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate",
     requires = {
-      'JoosepAlviste/nvim-ts-context-commentstring',
-      'nvim-treesitter/playground'
+      "JoosepAlviste/nvim-ts-context-commentstring",
+      "nvim-treesitter/playground"
     }
   }
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
 
   -- LSP (Language Server Protocol)
   use {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     requires = {
-      'williamboman/mason.nvim',
-      'williamboman/mason-lspconfig.nvim',
-      'tami5/lspsaga.nvim'
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "tami5/lspsaga.nvim"
     },
   }
 
@@ -129,7 +129,7 @@ return packer.startup(function(use)
   use "numToStr/Comment.nvim"
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"
-  use 'lewis6991/impatient.nvim' -- improve startup
+  use "lewis6991/impatient.nvim" -- improve startup
 
   if PACKER_BOOTSTRAP then require("packer").sync() end
 end)
