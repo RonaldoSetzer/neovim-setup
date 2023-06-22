@@ -1,10 +1,14 @@
 # Neovim Setup
 
+![dashboard](screenschots/00-deshboard.png)
+
 ## TODO
+
 - [ ] Setup Null-ls to handle with format
 - [ ] Setup Dap to add debug supports
 
 ## Core
+
 - package-manager
 - autocomplete
 - language-syntax
@@ -12,6 +16,7 @@
 - language-server
 
 ## IDE features
+
 - Statup page
 - Statusbar
 - DevIcons support
@@ -23,15 +28,18 @@
 - Fancy notification
 
 ## Custom mappings
-- \<space\>: leader key
-- jj, jk, kk, kj: Back to normal mode
-- \<C-s\>: Save current file
-- <leader>w: Close current buffer
-- <leader>W: Close all buffers
-- <C-h>,<C-j>, <C-k>, <C-l>: Window navigation
-- <TAB>, <S-TAB>: Swtich between buffers
+
+- `<space>`: leader key
+- `jj, jk, kk, kj`: Back to normal mode
+- `<C-s>`: Save current file
+- `<leader>w`: Close current buffer
+- `<leader>W`: Close all buffers
+- `<C-h>,<C-j>, <C-k>, <C-l>`: Window navigation
+- `<TAB>, <S-TAB>`: Swtich between buffers
 
 ### Package Manager
+
+![plugin-manager](screenschots/05-plugin-manager.png)
 
 - This setup uses [packer.nvim](https://github.com/wbthomason/packer.nvim) as a plugin manager
 - All plugins are setup on the `lua/core/package-manager.lua` file
@@ -40,9 +48,12 @@
 
 ### Autocomplete
 
+![completion](screenschots/02-completion.png)
+
 - the completion engine is [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 
 #### Completion plugins
+
 - [cmp-buffer](https://github.com/hrsh7th/cmp-buffer)
 - [cmp-path](http://github.com/hrsh7th/cmp-path)
 - [cmp-cmdline](http://github.com/hrsh7th/cmp-cmdline)
@@ -68,11 +79,20 @@
 
 
 ### fuzzy-finder
+
+![navigation](screenschots/01-navigation.png)
+![navigation](screenschots/01-navigation-grep.png)
+
 - [Telescope](https://github.com/nnvim-telescope/telescope.nvim)
 - [telescope-fzf-native.nvim](https://github.com/nnvim-telescope/telescope-fzf-native.nvim)
 
 
 ### language-server
+
+![lsp](screenschots/03-lsp-codeaction.png)
+![diagnostic](screenschots/04-diagnostic-hover.png)
+![diagnostic](screenschots/04-diagnostic.png)
+
 As a language-server engine, the setup uses lsp and mason as language installer
 
 LspSaga provides code action `<leader> ca`
