@@ -32,6 +32,8 @@ local function on_attach(bufnr)
   vim.keymap.set('n', 'o', api.node.open.edit, opts('Open'))
   vim.keymap.set('n', 'h', api.node.navigate.parent_close, opts('Close Directory'))
   vim.keymap.set('n', 'q', api.tree.close, opts('Close the tree'))
+  vim.keymap.set('n', 'X', api.fs.remove, opts('Delete'))
+  vim.keymap.set('n', 'R', api.fs.rename, opts('Rename'))
 end
 
 nvim_tree.setup({
