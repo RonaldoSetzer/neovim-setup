@@ -6,7 +6,7 @@ vim.o.smartcase = true  -- "Smart case search if there is uppercase
 vim.o.ignorecase = true -- "case insensitive search
 vim.o.showmatch = true  -- "Highlight matching bracket
 vim.o.mouse = 'a'       -- "Enable mouse usage
-vim.o.scrolloff = 3
+vim.o.scrolloff = 10
 vim.o.clipboard = 'unnamed'
 vim.o.showtabline = 0
 vim.o.expandtab = true       -- "Use spaces for indentation
@@ -31,6 +31,9 @@ vim.wo.breakindent = true    -- "Preserve indent on line wrap
 vim.wo.signcolumn = 'yes'
 vim.wo.colorcolumn = '100'   -- "Highlight 100th column for easier wrapping
 vim.wo.foldmethod = 'syntax' -- "When folding enabled, use syntax method
+
+vim.g.loaded_netrw = 1       -- To prevent netrw from loading
+vim.g.loaded_netrwPlugin = 1 -- To prevent netrwPlugin from loading
 
 -- Disable auto folding
 vim.api.nvim_exec([[
