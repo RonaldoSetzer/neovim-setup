@@ -10,6 +10,5 @@ require("nvim-treesitter.configs").setup {
     disable = { "" },      -- list of language that will be disabled
     additional_vim_regex_highlighting = true
   },
-  context_commentstring = { enable = true },
   indent = { enable = true, disable = { "yaml" } },
 }
