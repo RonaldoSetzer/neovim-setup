@@ -99,7 +99,7 @@ return packer.startup(function(use)
     requires = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
-      "tami5/lspsaga.nvim"
+      "nvimdev/lspsaga.nvim",
     },
   }
 

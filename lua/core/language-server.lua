@@ -52,6 +52,15 @@ mason_lspconfig.setup {
   ensure_installed = vim.tbl_keys(servers),
 }
 
+require ('lspsaga').setup({
+  lightbulb = {
+    enable = false,
+  },
+  symbol_in_winbar = {
+    enable = false,
+  },
+})
+
 local on_attach = function(client, bufnr)
   client.server_capabilities.semanticTokensProvider = nil
 
@@ -60,8 +69,8 @@ local on_attach = function(client, bufnr)
   end
 
   -- Refactor
-  nmap("<leader>ca", require 'lspsaga.codeaction'.code_action, '• Refactor: Code Action')
-  nmap("<leader>rr", require 'lspsaga.rename'.rename, '• Refactor: Rename')
+  nmap("<leader>ca", '<CMD>Lspsaga code_action<CR>', '• Refactor: Code Action')
+  nmap("<leader>rr", '<CMD>Lspsaga rename<CR>', '• Refactor: Rename')
   nmap("<leader>p", vim.lsp.buf.format, '• Refactor: Format current buffer with LSP')
 
   -- Navigation
@@ -74,9 +83,9 @@ local on_attach = function(client, bufnr)
   nmap("]g", require 'gitsigns'.next_hunk, '• Navigation: Goto Next Git Hunk')
 
   -- Hover Documentation
-  nmap("K", require 'lspsaga.hover'.render_hover_doc, '• Documentation: Hover Documentation')
-  nmap("Kr", require 'lspsaga.provider'.lsp_finder, '• Documentation: LSP Finder')
-  nmap("Kd", require 'lspsaga.diagnostic'.show_line_diagnostics, '• Documentation: Line Diagnostics')
+  nmap("K", '<CMD>Lspsaga hover_doc<CR>', '• Documentation: Hover Documentation')
+  nmap("Kr", '<CMD>Lspsaga finder<CR>', '• Documentation: LSP Finder')
+  nmap("Kd", '<CMD>Lspsaga show_cursor_diagnostics<CR>', '• Documentation: Line Diagnostics')
 
   -- workspace
   nmap('<leader>ws', require 'telescope.builtin'.lsp_dynamic_workspace_symbols,
