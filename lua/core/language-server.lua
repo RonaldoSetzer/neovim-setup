@@ -38,7 +38,6 @@ vim.diagnostic.config(config)
 local servers = {
   gopls = {},
   tsserver = {},
-  emmet_ls = {},
   lua_ls = {
     Lua = {
       diagnostics = { globals = { "vim" } },
