@@ -76,10 +76,14 @@ return packer.startup(function(use)
     version = "*",
     requires = { "plenary.nvim" }
   }
-  use { "nvim-telescope/telescope-fzf-native.nvim", build = "make", cond = function()
-    return vim.fn.executable "make" ==
-        1
-  end }
+  use {
+    "nvim-telescope/telescope-fzf-native.nvim",
+    build = "make",
+    cond = function()
+      return vim.fn.executable "make" == 1
+    end
+  }
+  use "christoomey/vim-tmux-navigator"
   use "kyazdani42/nvim-tree.lua" -- (may 14)
   use "goolord/alpha-nvim"
   use "ahmedkhalf/project.nvim"

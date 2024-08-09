@@ -32,10 +32,10 @@ keymap('n', '<Leader>W', '<cmd>%bd<CR>', '• Buffer: Close all buffers')
 keymap('n', '<Leader>c', '<cmd>cclose<CR>', '• Quickfix: Close quickfix')
 
 -- Navigation
-keymap('n', '<C-h>', '<C-w>h', '• Navigation: Move to left window')
-keymap('n', '<C-j>', '<C-w>j', '• Navigation: Move to bottom window')
-keymap('n', '<C-k>', '<C-w>k', '• Navigation: Move to top window')
-keymap('n', '<C-l>', '<C-w>l', '• Navigation: Move to right window')
+keymap('n', '<C-h>', '<cmd><C-U>TmuxNavigateLeft<cr>', '• Navigation: Move to left window')
+keymap('n', '<C-j>', '<cmd><C-U>TmuxNavigateDown<cr>', '• Navigation: Move to bottom window')
+keymap('n', '<C-k>', '<cmd><C-U>TmuxNavigateUp<cr>', '• Navigation: Move to top window')
+keymap('n', '<C-l>', '<cmd><C-U>TmuxNavigateRight<cr>', '• Navigation: Move to right window')
 keymap('n', '<TAB>', '<cmd>bnext<CR>', '• Navigation: Switch to next buffer')
 keymap('n', '<S-TAB>', '<cmd>bprevious<CR>', '• Navigation: Switch to previous buffer')
 
