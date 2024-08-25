@@ -23,6 +23,7 @@ keymap('i', 'kj', '<Esc>', '• Exit: Exit insert mode')
 -- Map save to Ctrl + S
 keymap('n', '<C-s>', '<cmd>w<CR>', '• Save: Save current file')
 keymap('i', '<C-s>', '<C-o>:w<CR><Esc>', '• Save: Save current file')
+vim.api.nvim_create_user_command('Wq', 'wq', {})
 
 -- Map close buffer
 keymap('n', '<Leader>w', '<cmd>bd<CR>', '• Buffer: Close current buffer')
