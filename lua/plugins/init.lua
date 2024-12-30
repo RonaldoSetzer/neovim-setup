@@ -1,8 +1,0 @@
-require "plugins.git"
-require "plugins.indent-blankline"
-require "plugins.nvim-tree"
-require "plugins.autopairs"
-require "plugins.comment"
-require "plugins.alpha"
-require "plugins.project"
-require "plugins.mappings"

@@ -130,6 +130,22 @@ return packer.startup(function(use)
   }
 
   -- Utils
+  use {
+    "epwalsh/obsidian.nvim",
+    requires = {
+      "nvim-lua/plenary.nvim",
+    },
+    config = function()
+      require("obsidian").setup({
+        workspaces = {
+          {
+            name = "personal",
+            path = "~/Documents/second-brain",
+          },
+        },
+      })
+    end
+  }
   use "numToStr/Comment.nvim"
   use "tpope/vim-surround"
   use "tpope/vim-eunuch"

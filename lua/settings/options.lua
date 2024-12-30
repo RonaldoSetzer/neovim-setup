@@ -34,30 +34,3 @@ vim.wo.foldmethod = 'syntax' -- "When folding enabled, use syntax method
 
 vim.g.loaded_netrw = 1       -- To prevent netrw from loading
 vim.g.loaded_netrwPlugin = 1 -- To prevent netrwPlugin from loading
-
--- Disable auto folding
-vim.api.nvim_exec([[
-  autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=indent foldlevelstart=99
-]], true)
-
-vim.api.nvim_exec([[
-" Auto magically Mkdir
-" ====================
-
-autocmd BufWritePre * call MkDir()
-
-function! MkDir()
-   if !isdirectory(expand("<afile>:p:h"))
-      let confirmation=confirm("Create a new directory?", "&Yes\n&No")
-      if confirmation == 1
-         call mkdir(expand("<afile>:p:h"), "p")
-         lcd %:p:h
-         saveas %:t
-         echom "Created a new directory:" expand("<afile>:p:h")
-         let buf_del = bufnr("$")
-         exe "bd" . buf_del
-      endif
-      redraw
-   endif
-endfunction
-]], true)
