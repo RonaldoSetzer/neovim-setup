@@ -1,63 +1,86 @@
-vim.cmd('set shortmess+=c')
-vim.o.completeopt = 'menu,menuone,preview,noselect,noinsert'
-vim.o.termguicolors = true
-vim.o.title = true      -- change the terminal's title
-vim.o.smartcase = true  -- "Smart case search if there is uppercase
-vim.o.ignorecase = true -- "case insensitive search
-vim.o.showmatch = true  -- "Highlight matching bracket
-vim.o.mouse = 'a'       -- "Enable mouse usage
-vim.o.scrolloff = 10
-vim.o.clipboard = 'unnamed'
-vim.o.showtabline = 0
-vim.o.expandtab = true       -- "Use spaces for indentation
-vim.o.tabstop = 2
-vim.o.shiftwidth = 2         -- "Use 2 spaces for indentation
-vim.o.pumheight = 10         -- Makes popup menu smaller
-vim.o.cmdheight = 2          -- More space for displaying messages
-vim.o.showmode = false       -- We don't need to see things like -- INSERT -- anymore
-vim.o.backup = false         -- "Enable saving swap file
-vim.o.writebackup = false    -- Disable writing backup file
-vim.o.swapfile = false       -- Enable creating swap file
-vim.o.updatetime = 300       -- Faster completion
-vim.o.splitright = true      -- "Split to the right
+-- ╭─────────────────────────────────────────────────────╮
+-- │  Settings Options                                   │
+-- ╰─────────────────────────────────────────────────────╯
 
-vim.bo.smartindent = true    -- "Use smarter indenting
+local opt = vim.opt
 
-vim.wo.number = true         -- Line numbers are good
-vim.wo.cursorline = true     -- Highlight current line
-vim.wo.wrap = true           -- Enable word wrap
-vim.wo.linebreak = true      -- "Wrap lines at convenient points
-vim.wo.breakindent = true    -- "Preserve indent on line wrap
-vim.wo.signcolumn = 'yes'
-vim.wo.colorcolumn = '100'   -- "Highlight 100th column for easier wrapping
-vim.wo.foldmethod = 'syntax' -- "When folding enabled, use syntax method
+-- -------------------------------------------------------
+-- Geral
+-- -------------------------------------------------------
 
-vim.g.loaded_netrw = 1       -- To prevent netrw from loading
-vim.g.loaded_netrwPlugin = 1 -- To prevent netrwPlugin from loading
+opt.title         = true
+opt.termguicolors = true
+opt.mouse         = 'a'
+opt.clipboard     = 'unnamedplus'
 
--- Disable auto folding
-vim.api.nvim_exec([[
-  autocmd BufWritePost,BufEnter * set nofoldenable foldmethod=indent foldlevelstart=99
-]], true)
+-- -------------------------------------------------------
+-- Busca
+-- -------------------------------------------------------
 
-vim.api.nvim_exec([[
-" Auto magically Mkdir
-" ====================
+opt.ignorecase = true
+opt.smartcase  = true
+opt.showmatch  = true
 
-autocmd BufWritePre * call MkDir()
+-- -------------------------------------------------------
+-- Completions & UX
+-- -------------------------------------------------------
 
-function! MkDir()
-   if !isdirectory(expand("<afile>:p:h"))
-      let confirmation=confirm("Create a new directory?", "&Yes\n&No")
-      if confirmation == 1
-         call mkdir(expand("<afile>:p:h"), "p")
-         lcd %:p:h
-         saveas %:t
-         echom "Created a new directory:" expand("<afile>:p:h")
-         let buf_del = bufnr("$")
-         exe "bd" . buf_del
-      endif
-      redraw
-   endif
-endfunction
-]], true)
+opt.completeopt = { 'menu', 'menuone', 'preview', 'noselect', 'noinsert' }
+opt.pumheight   = 10
+opt.updatetime  = 300
+opt.cmdheight   = 1
+opt.showmode    = false
+
+-- -------------------------------------------------------
+-- Interface
+-- -------------------------------------------------------
+
+opt.number       = true
+opt.cursorline   = true
+opt.wrap         = true
+opt.linebreak    = true
+opt.breakindent  = true
+opt.signcolumn   = 'yes'
+opt.colorcolumn  = '100'
+opt.showtabline  = 0
+opt.scrolloff    = 10
+
+-- -------------------------------------------------------
+-- Splits
+-- -------------------------------------------------------
+
+opt.splitright = true
+opt.splitbelow = true
+
+-- -------------------------------------------------------
+-- Indentação
+-- -------------------------------------------------------
+
+opt.expandtab   = true
+opt.tabstop     = 2
+opt.shiftwidth  = 2
+vim.bo.smartindent = true
+
+-- -------------------------------------------------------
+-- Arquivos temporários
+-- -------------------------------------------------------
+
+opt.backup      = false
+opt.writebackup = false
+opt.swapfile    = false
+
+-- -------------------------------------------------------
+-- Folding
+-- -------------------------------------------------------
+
+opt.foldmethod  = 'expr'
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
+opt.foldlevel  = 99
+opt.foldlevelstart = 99
+
+-- -------------------------------------------------------
+-- Desativa netrw (usando nvim-tree/mini.files/etc)
+-- -------------------------------------------------------
+
+vim.g.loaded_netrw       = 1
+vim.g.loaded_netrwPlugin = 1

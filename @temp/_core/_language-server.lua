@@ -37,7 +37,7 @@ vim.diagnostic.config(config)
 
 local servers = {
   gopls = {},
-  tsserver = {},
+  ts_ls = {},
   lua_ls = {
     Lua = {
       diagnostics = { globals = { "vim" } },
@@ -106,30 +106,3 @@ mason_lspconfig.setup_handlers {
     }
   end,
 }
---[[ client.server_capabilities.semanticTokensProvider = nil ]]
--- From old config
---if client.name == "sumneko_lua" then client.server_capabilities.document_formatting = false end
---if client.name == "tsserver" then client.server_capabilities.document_formatting = false end
---if client.name == "gopls" then client.server_capabilities.document_formatting = false end
-
--- From old config - Add json helpers
--- if server.name == "jsonls" then
---   local jsonls_opts = require("lsp.settings.jsonls")
---   opts = vim.tbl_deep_extend("force", jsonls_opts, opts)
--- end
-
--- Lesser used LSP functionality
---[[ nmap('<leader>D', vim.lsp.buf.type_definition, 'LSP: Type [D]efinition') ]]
---[[ nmap('gI', vim.lsp.buf.implementation, 'LSP: [G]oto [I]mplementation') -- Show a list of implementations in quick list ]]
---[[ nmap('gD', vim.lsp.buf.declaration, 'LSP: [G]oto [D]eclaration') ]]
---[[ nmap('<leader>wl', function() ]]
---[[   print(vim.inspect(vim.lsp.buf.list_workspace_folders())) ]]
---[[ end, 'LSP: [W]orkspace [L]ist Folders') ]]
---[[ nmap('<C-k>', vim.lsp.buf.signature_help, 'LSP: Signature Documentation') ]]
--- Replaced by lspsaga
---[[ nmap('<leader>rn', vim.lsp.buf.rename, 'LSP: [R]e[n]ame') ]]
--- Replaced by lspsaga
---[[ nmap('<leader>ca', vim.lsp.buf.code_action, 'LSP: [C]ode [A]ction') ]]
--- Replaced by lspsaga
---[[ nmap('K', vim.lsp.buf.hover, 'LSP: Hover Documentation') ]]
--- Replaced by lspsaga
