@@ -3,8 +3,7 @@ return {
   {
 		"stevearc/conform.nvim",
 		event = "BufWritePre",
-		config = function()
-			require("conform").setup({
+		opts = {
 				formatters_by_ft = {
 					go = { "gofmt" },
 					typescript = { "prettier" },
@@ -13,12 +12,16 @@ return {
 					lua = { "stylua" },
 					json = { "jq" },
 				},
-			})
+			},
 
-			local utils = require("core.utils")
-			utils.keymap("n", "<Leader>cf", function()
-				require("conform").format({ async = true, lsp_fallback = true })
-			end, "• Refactor: Format current buffer with Conform")
-		end,
+		keys = {
+			{
+				"<Leader>cf",
+				function()
+					require("conform").format({ async = true, lsp_fallback = true })
+				end,
+				desc = "• Refactor: Format current buffer with Conform",
+			},
+		},
 	}
 }
