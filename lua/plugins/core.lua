@@ -50,4 +50,8 @@ return {
       },
     },
   },
+  { "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } },
+  { "tpope/vim-surround", event = "VeryLazy" },
+  { "tpope/vim-eunuch", cmd = { "Rename", "Move", "Delete", "Mkdir", "Chmod" } },
+	{ "numToStr/Comment.nvim", keys = { "gc", "gb" }, opts = {} },
 }
