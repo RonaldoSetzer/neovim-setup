@@ -48,6 +48,10 @@ return {
           },
         }
       },
+      explorer = { enabled = true },
+    },
+    keys = {
+      { "<Leader>e", function() Snacks.explorer() end, desc = "• File Explorer: Toggle Snacks.explore" },
     },
   },
   { "famiu/bufdelete.nvim", cmd = { "Bdelete", "Bwipeout" } },
