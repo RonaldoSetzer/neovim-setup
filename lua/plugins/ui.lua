@@ -9,4 +9,5 @@ return {
 			vim.cmd("colorscheme gruvbox-material")
 		end,
 	},
+	{ "lukas-reineke/indent-blankline.nvim", event = "BufReadPost" },
 }
