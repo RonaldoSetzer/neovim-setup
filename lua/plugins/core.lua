@@ -1,40 +1,53 @@
-return {{
-  "christoomey/vim-tmux-navigator",
-  "tpope/vim-surround",
-  "tpope/vim-eunuch",
-  "github/copilot.vim",
-  -- "lukas-reineke/indent-blankline.nvim",
-  --[[ "nvim-lua/popup.nvim", ]]
-  --[[ "hrsh7th/nvim-cmp", ]]
-  --[[ "hrsh7th/cmp-buffer", ]]
-  --[[ "hrsh7th/cmp-path", ]]
-  --[[ "hrsh7th/cmp-cmdline", ]]
-  --[[ "saadparwaiz1/cmp_luasnip", ]]
-  --[[ "hrsh7th/cmp-nvim-lsp", ]]
-  --[[ "hrsh7th/cmp-nvim-lua", ]]
-  --[[ "ahmedkhalf/project.nvim", ]]
-  --[[ "windwp/nvim-autopairs", ]]
-  --[[ "tpope/vim-fugitive", ]]
-  --[[ "numToStr/Comment.nvim", ]]
-  --[[ "lewis6991/impatient.nvim", ]]
-  --[[ "L3MON4D3/LuaSnip", ]]
-  --[[ "rafamadriz/friendly-snippets", ]]
-  --[[ "nvimdev/lspsaga.nvim", ]]
-  --[[ "JoosepAlviste/nvim-ts-context-commentstring", ]]
-  --[[ "nvim-treesitter/playground", ]]
-  --[[ "neovim/nvim-lspconfig", ]]
-  --[[ "christoomey/vim-tmux-navigator", ]]
-  --[[ "williamboman/mason.nvim", ]]
-  --[[ "williamboman/mason-lspconfig.nvim", ]]
-  --[[ dependencies = { ]]
-  --[[   { ]]
-  --[[     "folke/lazydev.nvim", ]]
-  --[[     ft = "lua", ]]
-  --[[     opts = { ]]
-  --[[       library = { ]]
-  --[[         { path = "${3rd}/luv/library", words = { "vim%.uv" } }, ]]
-  --[[       }, ]]
-  --[[     }, ]]
-  --[[   }, ]]
-  --[[ }, ]]
-}}
+return {
+  {
+    "folke/snacks.nvim",
+    event = "VimEnter",
+    opts = {
+      dashboard = {
+        enabled = true,
+        preset = {
+          header = table.concat({
+            "",
+            "",
+            "",
+            "██████████████████████████████████████████████████████████████████████████████",
+            "██████████    ██████████████  ██████████  ████████████████        ████████████",
+            "████████        ██████████████  ██████  ████████████                    ██████",
+            "██████            ██████████              ████████                        ████",
+            "████    ██    ██    ██████    ██      ██    ██████      ████    ████      ████",
+            "████                ████                      ████                        ████",
+            "████████  ████  ████████  ██              ██  ██████████    ████    ██████████",
+            "██████  ██    ██  ██████  ██  ██████████  ██  ████████    ██    ██    ████████",
+            "████  ██  ████  ██  ██████████    ██    ██████████    ████████████████    ████",
+            "██████████████████████████████████████████████████████████████████████████████",
+            "",
+            "",
+          }, "\n"),
+  
+          keys = {
+            { icon = "󰱼 ", key = "f", desc = "Find file", action = ":Telescope find_files<CR>" },
+            { icon = "󰍉 ", key = "t", desc = "Find text", action = ":Telescope live_grep<CR>" },
+            { icon = " ", key = "p", desc = "Find project", action = ":Telescope projects<CR>" },
+            { icon = " ", key = "g", desc = "Git", action = ":tab G<CR>" },
+          },
+        },
+        formats = {
+          footer = { "Santiago.d.Ronaldo", align = "center" },
+        },
+        sections = {
+          { section = "header" },
+          { section = "keys", gap = 1, padding = 1 },
+          { section = "startup" },
+          {
+            items = {
+              { desc = "Santiago.d.Ronaldo" },
+            },
+            gap = 1,
+            padding = 1,
+            align = "center",
+          },
+        }
+      },
+    },
+  },
+}

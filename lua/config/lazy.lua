@@ -40,7 +40,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		-- { import = "plugins.core" },
+		{ import = "plugins.core" },
 		{ import = "plugins.ui" },
 		{ import = "plugins.formatting" },
 		-- { import = "plugins.git" },
