@@ -48,7 +48,7 @@ require("lazy").setup({
 		-- { import = "plugins.lsp" },
 		-- { import = "plugins.completion" },
 		{ import = "plugins.search" },
-		-- { import = "plugins.syntax" },
+		{ import = "plugins.syntax" },
 	},
 	defaults = {
 		lazy = true, -- Lazy-load plugins by default (recommended for performance)
