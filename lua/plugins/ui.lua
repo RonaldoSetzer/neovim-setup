@@ -10,4 +10,11 @@ return {
 		end,
 	},
 	{ "lukas-reineke/indent-blankline.nvim", event = "BufReadPost" },
+	{ 
+		"echasnovski/mini.icons", 
+		lazy = false,
+		opts = {
+			style = "glyphs",
+		}
+	},
 }
