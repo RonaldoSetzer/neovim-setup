@@ -1,5 +1,9 @@
 return {
   {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
+  {
     "folke/snacks.nvim",
     event = "VimEnter",
     opts = {
@@ -25,9 +29,9 @@ return {
           }, "\n"),
   
           keys = {
-            { icon = "󰱼 ", key = "f", desc = "Find file", action = ":Telescope find_files<CR>" },
-            { icon = "󰍉 ", key = "t", desc = "Find text", action = ":Telescope live_grep<CR>" },
-            { icon = " ", key = "p", desc = "Find project", action = ":Telescope projects<CR>" },
+            { icon = "󰱼 ", key = "f", desc = "Find file", action = "<Cmd>Telescope find_files<CR>" },
+            { icon = "󰍉 ", key = "t", desc = "Find text", action = "<Cmd>Telescope live_grep<CR>" },
+            { icon = " ", key = "p", desc = "Find project", action = "<Cmd>Telescope projects<CR>" },
             { icon = " ", key = "g", desc = "Git", action = ":tab G<CR>" },
           },
         },
