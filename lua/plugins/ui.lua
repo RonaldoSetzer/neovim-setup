@@ -10,11 +10,18 @@ return {
 		end,
 	},
 	{ "lukas-reineke/indent-blankline.nvim", event = "BufReadPost" },
-	{ 
-		"echasnovski/mini.icons", 
+	{
+		"echasnovski/mini.icons",
 		lazy = false,
 		opts = {
 			style = "glyphs",
-		}
+		},
+	},
+	{
+		"echasnovski/mini.statusline",
+    	event = "VeryLazy",
+		config = function()
+			require("config.ui").statusline()
+		end,
 	},
 }
