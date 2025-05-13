@@ -10,18 +10,45 @@ return {
 				end,
 				desc = "• File Explorer: Open Oil",
 			},
+			{
+				"<Esc><Esc>",
+				function()
+					local oil = require("oil")
+					vim.bo.modified = false
+					if oil.close then
+						oil.close()
+					else
+						vim.api.nvim_win_close(0, true)
+					end
+				end,
+				mode = "n",
+				ft = "oil",
+				desc = "• Oil: Close with ESC",
+			},
 		},
 		opts = {
 			columns = { "icon" },
 			view_options = { show_hidden = true },
 			float = {
-				winblend = 10,
+				padding = 0,
+				max_width = 1,
+				max_height = 0.7,
 				border = "single",
-				width = 0.6,
-				height = 0.6,
-				highlights = {
-					border = "rounded",
-					background = "Normal",
+				override = function(conf)
+					local ui = vim.api.nvim_list_uis()[1]
+					conf.width = math.floor(ui.width * 1)
+					conf.height = math.floor(ui.height * 0.6)
+					conf.row = ui.height - conf.height - 2
+					conf.col = math.floor((ui.width - conf.width) / 2)
+					return conf
+				end,
+				win_options = {
+					winblend = 15,
+					winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual",
+				},
+				buf_options = {
+					buflisted = false,
+					modifiable = false,
 				},
 			},
 		},
