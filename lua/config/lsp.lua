@@ -48,6 +48,8 @@ M.on_attach = function(client, bufnr)
 	keymap("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	keymap("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	keymap("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
+
+	require("lsp_signature").on_attach({}, bufnr)
 end
 
 M.setup = function(opts)
