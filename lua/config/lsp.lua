@@ -6,6 +6,7 @@ local M = {}
 
 M.servers = {
 	ts_ls = {
+		root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
 		settings = {
 			typescript = {
 				inlayHints = {
@@ -19,15 +20,19 @@ M.servers = {
 			},
 		},
 	},
-	marksman = {}, -- Markdown LSP
+	marksman = {},
 	lua_ls = {
+		root_dir = require("lspconfig.util").root_pattern(".git", "init.lua"),
 		settings = {
 			Lua = {
 				diagnostics = {
 					globals = { "vim" },
 				},
 				workspace = {
-					library = vim.api.nvim_get_runtime_file("", true),
+					library = {
+						[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+						[vim.fn.stdpath("config") .. "/lua"] = true,
+					},
 					checkThirdParty = false,
 				},
 				telemetry = { enable = false },
@@ -37,11 +42,19 @@ M.servers = {
 }
 
 M.on_attach = function(client, bufnr)
+	local clients = vim.lsp.get_clients({ bufnr = bufnr })
+	for _, existing_client in ipairs(clients) do
+		if existing_client.name == client.name and existing_client.id ~= client.id then
+			vim.notify("Desanexando cliente duplicado: " .. client.name, vim.log.levels.WARN)
+			vim.lsp.stop_client(client.id)
+			return
+		end
+	end
+
 	local opts = { noremap = true, silent = true, buffer = bufnr }
 	local keymap = vim.keymap.set
 
-	-- Mapeamentos básicos do LSP
-	keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	keymap("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
 	keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
 	keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	keymap("n", "<Leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
