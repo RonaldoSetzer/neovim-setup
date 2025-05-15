@@ -1,29 +1,66 @@
-local lspconfig = require("lspconfig")
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- ╭─────────────────────────────────────────────────────╮
+-- │ LSP Bootstrap                                       │
+-- ╰─────────────────────────────────────────────────────╯
 
-local servers = { "ts_ls", "eslint", "volar", "html", "cssls", "tailwindcss", "lua_ls", "gopls" }
+local M = {}
 
-for _, server in ipairs(servers) do
-	lspconfig[server].setup({
-		capabilities = capabilities,
-	})
-end
-
--- Diagnostic signs e virtual_text config
-vim.diagnostic.config({
-	virtual_text = {
-		prefix = "●",
-		spacing = 2,
+M.servers = {
+	ts_ls = {
+		settings = {
+			typescript = {
+				inlayHints = {
+					includeInlayFunctionParameterTypeHints = true,
+				},
+			},
+			javascript = {
+				inlayHints = {
+					includeInlayFunctionParameterTypeHints = true,
+				},
+			},
+		},
 	},
-	signs = true,
-	underline = true,
-	update_in_insert = false,
-	severity_sort = true,
-})
+	marksman = {}, -- Markdown LSP
+	lua_ls = {
+		settings = {
+			Lua = {
+				diagnostics = {
+					globals = { "vim" },
+				},
+				workspace = {
+					library = vim.api.nvim_get_runtime_file("", true),
+					checkThirdParty = false,
+				},
+				telemetry = { enable = false },
+			},
+		},
+	},
+}
 
--- Signs personalizados
-local signs = { Error = "", Warn = "", Hint = "", Info = "" }
-for type, icon in pairs(signs) do
-	local hl = "DiagnosticSign" .. type
-	vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+M.on_attach = function(client, bufnr)
+	local opts = { noremap = true, silent = true, buffer = bufnr }
+	local keymap = vim.keymap.set
+
+	-- Mapeamentos básicos do LSP
+	keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
+	keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+	keymap("n", "<Leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
+	keymap("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	keymap("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
+	keymap("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
 end
+
+M.setup = function(opts)
+	local lspconfig = require("lspconfig")
+	local capabilities = vim.lsp.protocol.make_client_capabilities()
+	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
+	for server, config in pairs(M.servers) do
+		lspconfig[server].setup(vim.tbl_deep_extend("force", {
+			on_attach = M.on_attach,
+			capabilities = capabilities,
+		}, config))
+	end
+end
+
+return M

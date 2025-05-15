@@ -76,4 +76,8 @@ require("lazy").setup({
 			},
 		},
 	},
+	-- dev = {
+	-- 	path = "~/plugins", -- Substitua pelo caminho onde você desenvolve plugins
+	-- 	patterns = { "my-plugins", "folke" }, -- Plugins que serão tratados como desenvolvimento
+	-- },
 })
