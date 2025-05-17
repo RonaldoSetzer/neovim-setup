@@ -27,6 +27,7 @@ M.servers = {
 			Lua = {
 				diagnostics = {
 					globals = { "vim" },
+					disable = { "unused-local", "lowercase-global" },
 				},
 				workspace = {
 					library = {
@@ -65,7 +66,34 @@ M.on_attach = function(client, bufnr)
 	require("lsp_signature").on_attach({}, bufnr)
 end
 
+M.diagnostic = function()
+	vim.diagnostic.config({
+		virtual_text = {
+			prefix = "❯ ",
+			source = false,
+			severity = {
+				min = vim.diagnostic.severity.WARN,
+			},
+		},
+		severity_sort = true,
+		float = {
+			border = "rounded",
+			source = false,
+		},
+		signs = {
+			text = {
+				[vim.diagnostic.severity.ERROR] = "✖",
+				[vim.diagnostic.severity.WARN] = "⚠",
+				[vim.diagnostic.severity.INFO] = "ℹ",
+				[vim.diagnostic.severity.HINT] = "",
+			},
+		},
+	})
+end
+
 M.setup = function(opts)
+	M.diagnostic()
+
 	local lspconfig = require("lspconfig")
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
