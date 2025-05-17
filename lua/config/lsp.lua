@@ -52,17 +52,6 @@ M.on_attach = function(client, bufnr)
 		end
 	end
 
-	local opts = { noremap = true, silent = true, buffer = bufnr }
-	local keymap = vim.keymap.set
-
-	keymap("n", "gd", "<Cmd>Telescope lsp_definitions<CR>", opts)
-	keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	keymap("n", "gi", "<Cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	keymap("n", "<Leader>rn", "<Cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	keymap("n", "<Leader>ca", "<Cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	keymap("n", "[d", "<Cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	keymap("n", "]d", "<Cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-
 	require("lsp_signature").on_attach({}, bufnr)
 end
 
@@ -76,10 +65,6 @@ M.diagnostic = function()
 			},
 		},
 		severity_sort = true,
-		float = {
-			border = "rounded",
-			source = false,
-		},
 		signs = {
 			text = {
 				[vim.diagnostic.severity.ERROR] = "✖",

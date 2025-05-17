@@ -45,4 +45,49 @@ return {
 			vim.api.nvim_set_hl(0, "DiagnosticVirtualTextHint", { fg = "#8EC07C", bg = "#282828" })
 		end,
 	},
+	{
+		"glepnir/lspsaga.nvim",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		event = "LspAttach",
+		opts = {
+			symbol_in_winbar = {
+				enable = false,
+			},
+			diagnostic = {
+				show_code_action = true,
+				show_source = true,
+				border = "rounded",
+				severity_sort = true,
+			},
+			lightbulb = {
+				enable = true,
+				sign = true,
+			},
+			rename = {
+				in_select = false,
+			},
+			outline = {
+				win_position = "right",
+				win_with = "",
+				win_width = 40,
+			},
+		},
+		keys = {
+			{ "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
+			{ "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Prev Diagnostic" },
+			{ "<Leader>ca", "<Cmd>Lspsaga code_action<CR>", desc = "Code Action" },
+			{ "<Leader>d", "<Cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Workspace Diagnostics" },
+			{ "K", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
+			{ "Kd", "<Cmd>Lspsaga show_line_diagnostics<CR>", desc = "Line Diagnostics" },
+			{ "gd", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
+			{ "gD", "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
+			{ "rr", "<Cmd>Lspsaga rename<CR>", desc = "Rename" },
+			{ "gf", "<Cmd>Lspsaga finder<CR>", desc = "Finder" },
+			{ "<Leader>o", "<Cmd>Lspsaga outline<CR>", desc = "Outline" },
+			{ "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "Toggle Terminal" },
+		},
+	},
 }
