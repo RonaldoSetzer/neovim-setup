@@ -42,9 +42,8 @@ require("lazy").setup({
 	spec = {
 		{ import = "plugins.core" },
 		{ import = "plugins.ui" },
-		-- { import = "plugins.formatting" },
 		{ import = "plugins.extras" },
-		-- { import = "plugins.git" },
+		{ import = "plugins.git" },
 		{ import = "plugins.lsp" },
 		{ import = "plugins.completion" },
 		{ import = "plugins.search" },
