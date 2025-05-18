@@ -24,18 +24,6 @@ return {
 		end,
 	},
 	{
-		"folke/trouble.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-		cmd = { "Trouble" },
-		opts = {
-			auto_close = true,
-		},
-		keys = {
-			{ "<leader>td", "<Cmd>Trouble diagnostics toggle<CR>", desc = "Document Diagnostics" },
-			{ "<leader>tq", "<Cmd>Trouble qflist toggle<CR>", desc = "Quickfix List" },
-		},
-	},
-	{
 		"folke/lsp-colors.nvim",
 		event = "LspAttach",
 		config = function()
