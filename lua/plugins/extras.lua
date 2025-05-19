@@ -27,6 +27,11 @@ return {
 			},
 		},
 		opts = {
+			keymaps = {
+				["<CR>"] = "actions.select",
+				["<C-x>"] = "actions.select_split",
+				["<C-v>"] = "actions.select_vsplit",
+			},
 			columns = { "icon" },
 			view_options = { show_hidden = true },
 			float = {
