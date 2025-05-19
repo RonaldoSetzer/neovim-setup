@@ -9,7 +9,20 @@ return {
 			vim.cmd("colorscheme gruvbox-material")
 		end,
 	},
-	{ "lukas-reineke/indent-blankline.nvim", event = "BufReadPost" },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = "BufReadPost",
+		config = function()
+			require("config.ui").indent()
+		end,
+	},
+		{
+		"echasnovski/mini.cursorword",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			delay = 100,
+		},
+	},
 	{
 		"echasnovski/mini.icons",
 		lazy = false,
@@ -19,7 +32,7 @@ return {
 	},
 	{
 		"echasnovski/mini.statusline",
-    	event = "VeryLazy",
+		event = "VeryLazy",
 		config = function()
 			require("config.ui").statusline()
 		end,
