@@ -92,7 +92,15 @@ return {
 				json = { "jq" },
 			},
 		},
-
+		config = function(_, opts)
+			require("conform").setup(opts)
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*.lua",
+				callback = function()
+					require("conform").format({ async = false })
+				end,
+			})
+		end,
 		keys = {
 			{
 				"<Leader>cf",
