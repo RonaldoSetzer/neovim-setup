@@ -23,7 +23,8 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "LazyGit",
 		keys = {
-			{ "<Leader>gg", ":LazyGit<CR>", desc = "Abrir LazyGit" },
+			{ "<Leader>gg", "<Cmd>LazyGit<CR>", desc = "Abrir LazyGit" },
+			{ "<Esc><Esc>", "<Cmd>q<CR>", mode = "t", desc = "Fechar LazyGit" },
 		},
 	},
 }
