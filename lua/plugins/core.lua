@@ -13,7 +13,6 @@ return {
 					header = table.concat({
 						"",
 						"",
-						"",
 						"██████████████████████████████████████████████████████████████████████████████",
 						"██████████    ██████████████  ██████████  ████████████████        ████████████",
 						"████████        ██████████████  ██████  ████████████                    ██████",
@@ -57,9 +56,7 @@ return {
 		keys = {
 			{
 				"<Leader>e",
-				function()
-					Snacks.explorer()
-				end,
+				"<Cmd>lua Snacks.explorer()<CR>",
 				desc = "• File Explorer: Toggle Snacks.explore",
 			},
 		},
