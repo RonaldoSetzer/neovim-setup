@@ -70,11 +70,18 @@ local s = ls.snippet
 local t = ls.text_node
 
 ls.add_snippets("lua", {
-  s("pr", { t("print('Hello World')") }),
+	s("pr", { t("print('Hello World')") }),
 })
 
 local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
+
+-- Verificar backspace
+local check_backspace = function()
+	local col = vim.fn.col(".") - 1
+	return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
+end
+
 cmp.setup({
 	snippet = {
 		expand = function(args)
@@ -96,6 +103,8 @@ cmp.setup({
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
+			elseif check_backspace() then
+				fallback()
 			else
 				fallback()
 			end
@@ -108,14 +117,14 @@ cmp.setup({
 			else
 				fallback()
 			end
-    end,
+		end,
 	},
 
 	sources = {
 		{ name = "lazydev", group_index = 0 },
 		{ name = "copilot" },
 		{ name = "nvim_lsp" },
-    { name = "luasnip" },
+		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "buffer" },
 	},
@@ -126,14 +135,14 @@ cmp.setup({
 		format = function(entry, vim_item)
 			vim_item = kind_formatter(entry, vim_item)
 			vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-      -- intercepta função e cria placeholders genericos
-      if entry.completion_item.kind == vim.lsp.protocol.CompletionItemKind.Function then
-        local label = entry.completion_item.label
-        if not label:find("%(") then -- só se não vier com ()
-          entry.completion_item.insertTextFormat = 2 -- snippet
-          entry.completion_item.insertText = label .. "(${1})"
-        end
-      end
+			-- intercepta função e cria placeholders genericos
+			if entry.completion_item.kind == vim.lsp.protocol.CompletionItemKind.Function then
+				local label = entry.completion_item.label
+				if not label:find("%(") then -- só se não vier com ()
+					entry.completion_item.insertTextFormat = 2 -- snippet
+					entry.completion_item.insertText = label .. "(${1})"
+				end
+			end
 			return vim_item
 		end,
 	},
