@@ -16,7 +16,15 @@ return {
 			require("config.ui").indent()
 		end,
 	},
-		{
+	{
+		"norcalli/nvim-colorizer.lua",
+		lazy = false,
+		opts = {
+			"*",
+			css = { rgb_fn = true },
+		},
+	},
+	{
 		"echasnovski/mini.cursorword",
 		event = { "BufReadPost", "BufNewFile" },
 		opts = {
