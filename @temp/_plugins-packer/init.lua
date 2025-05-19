@@ -1,8 +1,0 @@
---require "plugins.git"
-require "plugins-packer.indent-blankline"
-require "plugins-packer.nvim-tree"
-require "plugins-packer.autopairs"
-require "plugins-packer.comment"
-require "plugins-packer.alpha"
---require "plugins.project"
-require "plugins-packer.mappings"
