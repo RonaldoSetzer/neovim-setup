@@ -52,7 +52,10 @@ M.on_attach = function(client, bufnr)
 		end
 	end
 
-	client.server_capabilities.semanticTokensProvider = nil
+	if client.server_capabilities.semanticTokensProvider then
+		client.server_capabilities.semanticTokensProvider = nil
+	end
+
 	if client.name == "ts_ls" or client.name == "jsonls" or client.name == "cssls" then
 		client.server_capabilities.documentFormattingProvider = false
 	end
