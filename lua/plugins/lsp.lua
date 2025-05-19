@@ -41,6 +41,7 @@ return {
 		},
 		event = "LspAttach",
 		opts = {
+			hover = true,
 			symbol_in_winbar = {
 				enable = false,
 			},
