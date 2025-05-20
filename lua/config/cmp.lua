@@ -44,7 +44,7 @@ lspkind.init({
 	},
 })
 
-vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#6CC644" })
+vim.api.nvim_set_hl(0, "CmpItemKindCopilot", { fg = "#FABD2F" })
 
 -- Tailwind color squares
 require("tailwindcss-colorizer-cmp").setup({
@@ -54,14 +54,12 @@ require("tailwindcss-colorizer-cmp").setup({
 local kind_formatter = lspkind.cmp_format({
 	mode = "symbol_text",
 	menu = {
-		buffer = "[buf]",
-		nvim_lsp = "[LSP]",
-		nvim_lua = "[api]",
-		path = "[path]",
-		luasnip = "[snip]",
-		gh_issues = "[issues]",
-		tn = "[TabNine]",
-		eruby = "[erb]",
+		buffer = "buf",
+		nvim_lsp = "lsp",
+		nvim_lua = "api",
+		path = "pth",
+		luasnip = "snp",
+		copilot = "󰄽  󰄾",
 	},
 })
 
@@ -124,6 +122,7 @@ cmp.setup({
 		{ name = "lazydev", group_index = 0 },
 		{ name = "copilot" },
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
 		{ name = "luasnip" },
 		{ name = "path" },
 		{ name = "buffer" },
@@ -131,15 +130,13 @@ cmp.setup({
 
 	formatting = {
 		fields = { "kind", "abbr", "menu" },
-		expandable_indicator = true,
 		format = function(entry, vim_item)
 			vim_item = kind_formatter(entry, vim_item)
 			vim_item = require("tailwindcss-colorizer-cmp").formatter(entry, vim_item)
-			-- intercepta função e cria placeholders genericos
 			if entry.completion_item.kind == vim.lsp.protocol.CompletionItemKind.Function then
 				local label = entry.completion_item.label
-				if not label:find("%(") then -- só se não vier com ()
-					entry.completion_item.insertTextFormat = 2 -- snippet
+				if not label:find("%(") then
+					entry.completion_item.insertTextFormat = vim.lsp.protocol.InsertTextFormat.Snippet
 					entry.completion_item.insertText = label .. "(${1})"
 				end
 			end
