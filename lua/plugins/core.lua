@@ -65,5 +65,4 @@ return {
 	{ "christoomey/vim-tmux-navigator", keys = { "<C-h>", "<C-j>", "<C-k>", "<C-l>" } },
 	{ "tpope/vim-surround", event = "VeryLazy" },
 	{ "tpope/vim-eunuch", cmd = { "Rename", "Move", "Delete", "Mkdir", "Chmod" } },
-	{ "numToStr/Comment.nvim", keys = { "gc", "gb" }, opts = {} },
 }

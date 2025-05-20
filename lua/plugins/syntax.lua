@@ -1,5 +1,9 @@
 return {
 	{
+		"JoosepAlviste/nvim-ts-context-commentstring",
+		event = { "BufReadPost", "BufNewFile" },
+	},
+	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = { "BufReadPost", "BufNewFile" },
@@ -48,5 +52,13 @@ return {
 			require("nvim-treesitter.configs").setup(opts)
 		end,
 	},
+	{
+		"numToStr/Comment.nvim",
+		event = { "BufReadPost", "BufNewFile" },
+		opts = {
+			pre_hook = function()
+				return vim.bo.commentstring
+			end,
+		},
+	},
 }
-
