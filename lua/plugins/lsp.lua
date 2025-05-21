@@ -11,6 +11,7 @@ return {
 				opts = {
 					library = {
 						{ path = "luvit-meta/library", words = { "vim%.uv" } },
+						{ "nvim-dap-ui" },
 					},
 				},
 			},
@@ -52,7 +53,7 @@ return {
 				severity_sort = true,
 			},
 			lightbulb = {
-				enable = true,
+				enable = false,
 				sign = true,
 			},
 			rename = {
