@@ -12,6 +12,7 @@ M.defaults = {
 			["<C-k>"] = actions.move_selection_previous,
 			["<C-j>"] = actions.move_selection_next,
 			["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
+			["<Esc>"] = actions.close,
 		},
 	},
 	prompt_prefix = "❯ ",
@@ -65,4 +66,3 @@ M.console_logs = function()
 end
 
 return M
-
