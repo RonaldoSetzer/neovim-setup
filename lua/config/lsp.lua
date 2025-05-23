@@ -20,7 +20,10 @@ M.servers = {
 			},
 		},
 	},
-	marksman = {},
+	marksman = {
+		filetypes = { "markdown", "markdown.mdx" },
+		root_dir = require("lspconfig.util").root_pattern(".obsidian", ".git"),
+	},
 	lua_ls = {
 		root_dir = require("lspconfig.util").root_pattern(".git", "init.lua"),
 		settings = {
@@ -60,7 +63,9 @@ M.on_attach = function(client, bufnr)
 		client.server_capabilities.documentFormattingProvider = false
 	end
 
-	require("lsp_signature").on_attach({}, bufnr)
+	if client.name ~= "marksman" then
+		require("lsp_signature").on_attach({}, bufnr)
+	end
 end
 
 M.diagnostic = function()
