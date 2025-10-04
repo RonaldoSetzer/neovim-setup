@@ -3,25 +3,101 @@
 -- ╰─────────────────────────────────────────────────────╯
 
 local M = {}
+local ts_sdk_path = vim.fn.stdpath("data") .. "/mason/packages/typescript-language-server/node_modules/typescript/lib"
 
 M.servers = {
+
 	ts_ls = {
-		root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+		cmd = { "typescript-language-server", "--stdio" },
+		root_dir = function(fname)
+			local util = require("lspconfig.util")
+			return util.root_pattern("tsconfig.json", "jsconfig.json", "package.json", "pnpm-workspace.yaml")(fname)
+		end,
 		settings = {
 			typescript = {
-				inlayHints = {
-					includeInlayFunctionParameterTypeHints = true,
+				preferGoToSourceDefinition = true,
+				importModuleSpecifierPreference = "relative",
+				tsdk = ts_sdk_path,
+				referencesCodeLens = {
+					enabled = true,
+					showOnAllFiles = true,
 				},
 			},
-			javascript = {
-				inlayHints = {
-					includeInlayFunctionParameterTypeHints = true,
+		},
+		flags = {
+			debounce_text_changes = 150,
+		},
+		init_options = {
+			preferences = {
+				disableSuggestions = false,
+			},
+			tsserver = {
+				useSyntaxServer = "never",
+				maxTsServerMemory = 4096,
+				enableProjectDependencies = true,
+			},
+		},
+	},
+	astro = {
+		cmd = { "astro-ls", "--stdio" },
+		filetypes = { "astro" },
+		root_dir = require("lspconfig.util").root_pattern(
+			"astro.config.mjs",
+			"astro.config.ts",
+			"package.json",
+			".git"
+		),
+		init_options = {
+			typescript = {
+				tsdk = ts_sdk_path,
+				enableProjectDependencies = true,
+			},
+		},
+		settings = {
+			typescript = {
+				tsdk = ts_sdk_path,
+			},
+			diagnostic = {
+				ignoredCodes = {
+					2306, -- File is not a module
+					2307, -- File is not a module
+				},
+			},
+			astro = {
+				typescript = {
+					tsdk = ts_sdk_path,
+				},
+				preferences = {
+					disableSuggestions = false,
+					suggest = {
+						autoImports = true,
+						completeFunctionCalls = true,
+					},
 				},
 			},
 		},
 	},
+	-- volar = {
+	--    root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+	-- 	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue", "json", "mdx" },
+	-- },
+	-- ts_ls = {
+	-- 	root_dir = require("lspconfig.util").root_pattern("package.json", "tsconfig.json", ".git"),
+	-- 	settings = {
+	-- 		typescript = {
+	-- 			inlayHints = {
+	-- 				includeInlayFunctionParameterTypeHints = true,
+	-- 			},
+	-- 		},
+	-- 		javascript = {
+	-- 			inlayHints = {
+	-- 				includeInlayFunctionParameterTypeHints = true,
+	-- 			},
+	-- 		},
+	-- 	},
+	-- },
 	marksman = {
-		filetypes = { "markdown", "markdown.mdx" },
+		filetypes = { "markdown", "markdown.mdx", "mdx" },
 		root_dir = require("lspconfig.util").root_pattern(".obsidian", ".git"),
 	},
 	lua_ls = {

@@ -23,6 +23,19 @@ return {
 			require("mason").setup()
 			require("config.lsp").setup(opts)
 		end,
+		keys = {
+			{ "ld", "<Cmd>lua vim.lsp.buf.definition()<CR>", desc = "LSP: Go to Definition" },
+			{ "lD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", desc = "LSP: Go to Declaration" },
+			{ "li", "<Cmd>lua vim.lsp.buf.implementation()<CR>", desc = "LSP: Go to Implementation" },
+			{ "lK", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "LSP: Signature Help" },
+			{ "lr", "<Cmd>lua vim.lsp.buf.references()<CR>", desc = "LSP: List References" },
+			{ "lh", "<Cmd>lua vim.lsp.buf.hover()<CR>", desc = "LSP: Hover Documentation" },
+			{ "<Leader>lr", "<Cmd>lua vim.lsp.buf.rename()<CR>", desc = "LSP: Rename Symbol" },
+			{ "<Leader>la", "<Cmd>lua vim.lsp.buf.code_action()<CR>", desc = "LSP: Code Action" },
+			{ "<Leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", desc = "LSP: Format Document" },
+			{ "<Leader>ls", "<Cmd>lua vim.lsp.buf.workspace_symbol()<CR>", desc = "LSP: Workspace Symbol" },
+			{ "<Leader>ld", "<Cmd>lua vim.diagnostic.open_float()<CR>", desc = "LSP: Show Line Diagnostics" },
+		},
 	},
 	{
 		"folke/lsp-colors.nvim",
@@ -89,6 +102,7 @@ return {
 				typescript = { "prettier" },
 				javascript = { "prettier" },
 				markdown = { "prettier" },
+				astro = { "prettier" },
 				lua = { "stylua" },
 				json = { "jq" },
 			},

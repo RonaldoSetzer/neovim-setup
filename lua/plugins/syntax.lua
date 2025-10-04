@@ -35,6 +35,7 @@ return {
 				"vimdoc",
 				"query",
 				"markdown_inline",
+				"astro",
 			},
 			auto_install = false,
 			indent = {
@@ -106,6 +107,10 @@ return {
 		config = function(_, opts)
 			require("nvim-treesitter.configs").setup(opts)
 		end,
+	},
+	{
+		"jxnblk/vim-mdx-js",
+		ft = { "mdx" },
 	},
 	{
 		"numToStr/Comment.nvim",
