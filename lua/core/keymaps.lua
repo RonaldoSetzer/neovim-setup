@@ -39,6 +39,10 @@ utils.keymap('n', '<C-j>', '<Cmd><C-U>TmuxNavigateDown<cr>', '• Navigation: Mo
 utils.keymap('n', '<C-k>', '<Cmd><C-U>TmuxNavigateUp<cr>', '• Navigation: Move to top window')
 utils.keymap('n', '<C-l>', '<Cmd><C-U>TmuxNavigateRight<cr>', '• Navigation: Move to right window')
 
+-- Quickfix List Navigation
+utils.keymap('n', '<C-j>', '<Cmd>cnext<CR>', '• Quickfix: Go to next item')
+utils.keymap('n', '<C-k>', '<Cmd>cprev<CR>', '• Quickfix: Go to previous item')
+
 -- -------------------------------------------------------
 -- Window Management Keymaps
 -- -------------------------------------------------------
