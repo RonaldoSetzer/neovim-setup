@@ -58,4 +58,28 @@ return {
 			},
 		},
 	},
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*",
+		lazy = true,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+		opts = {
+			workspaces = {
+				{
+					name = "personal",
+					path = "~/Workspace/omoikane/",
+				},
+			},
+			daily_notes = {
+				folder = "daily",
+				date_format = "%Y-%m-%d",
+			},
+			note_id_func = function(title)
+				return title and title:gsub(" ", " ") or tostring(os.time())
+			end,
+		},
+	},
 }
