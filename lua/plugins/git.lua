@@ -23,8 +23,15 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "LazyGit",
 		keys = {
-			{ "<Leader>gg", "<Cmd>LazyGit<CR>", desc = "Abrir LazyGit" },
+			{ "<Leader>G", "<Cmd>LazyGit<CR>", desc = "Abrir LazyGit" },
 			{ "<Esc><Esc>", "<Cmd>q<CR>", mode = "t", desc = "Fechar LazyGit" },
+		},
+	},
+	{
+		"tpope/vim-fugitive",
+		cmd = { "Git", "G" },
+		keys = {
+			{ "<Leader>gg", "<Cmd>vert Git<CR>", desc = "• Git: Open Git status" },
 		},
 	},
 }
