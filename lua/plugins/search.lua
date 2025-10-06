@@ -3,7 +3,7 @@ return {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "Telescope",
-    version = "0.1.4",
+		version = "0.1.4",
 		keys = {
 			{ "<Leader>ff", "<Cmd>Telescope find_files<CR>", desc = "Find Files" },
 			{ "<Leader>fg", "<Cmd>Telescope live_grep<CR>", desc = "Grep (Live)" },
@@ -30,6 +30,7 @@ return {
 		config = function(_, opts)
 			require("telescope").setup(opts)
 			pcall(require("telescope").load_extension, "fzf")
+			pcall(require("telescope").load_extension, "lsp")
 		end,
 	},
 	{

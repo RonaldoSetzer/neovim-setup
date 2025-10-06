@@ -25,17 +25,4 @@ return {
 			require("config.cmp")
 		end,
 	},
-	{
-		"ray-x/lsp_signature.nvim",
-		event = "VeryLazy",
-		opts = {},
-		config = function()
-			require("lsp_signature").setup({
-				bind = true,
-				floating_window = true,
-				hint_enable = false,
-				handler_opts = { border = "rounded" },
-			})
-		end,
-	},
 }

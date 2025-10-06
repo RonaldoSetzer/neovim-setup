@@ -44,10 +44,9 @@ require("lazy").setup({
 		{ import = "plugins.ui" },
 		{ import = "plugins.extras" },
 		{ import = "plugins.git" },
-		{ import = "plugins.lsp" },
+		{ import = "plugins.development" },
 		{ import = "plugins.completion" },
 		{ import = "plugins.search" },
-		{ import = "plugins.syntax" },
 		{ import = "plugins.debug" },
 	},
 	defaults = {
