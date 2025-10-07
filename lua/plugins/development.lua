@@ -39,6 +39,20 @@ return {
 				"<Cmd>lua vim.lsp.buf.references()<CR>",
 				desc = "• LSP: List all references of the symbol under the cursor",
 			},
+			{
+				"<leader>D",
+				function()
+					local wininfo = vim.fn.getwininfo(vim.api.nvim_get_current_win())[1]
+					local loc_open = wininfo.loclist == 1
+
+					if loc_open then
+						vim.cmd("lclose")
+					else
+						vim.diagnostic.setloclist({ open = true })
+					end
+				end,
+				desc = "• LSP: Show diagnostics for the current buffer in location list",
+			},
 			-- 	{ "<Leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", desc = "LSP: Format Document" },
 		},
 	},
