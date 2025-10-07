@@ -15,7 +15,7 @@ return {
 						{ icon = "󰱼 ", key = "f", desc = "Find file", action = "<Cmd>Telescope find_files<CR>" },
 						{ icon = "󰍉 ", key = "t", desc = "Find text", action = "<Cmd>Telescope live_grep<CR>" },
 						{ icon = " ", key = "p", desc = "Find project", action = "<Cmd>Telescope projects<CR>" },
-						{ icon = " ", key = "g", desc = "Git", action = "<Cmd>vert Git<CR>" },
+						{ icon = " ", key = "g", desc = "Git", action = "<Cmd>tab Git<CR>" },
 						{ icon = " ", key = "G", desc = "LazyGit", action = "<Cmd>LazyGit<CR>" },
 					},
 				},

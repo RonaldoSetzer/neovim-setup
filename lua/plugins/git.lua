@@ -31,7 +31,6 @@ return {
 		"tpope/vim-fugitive",
 		cmd = { "Git", "G" },
 		keys = {
-			{ "<Leader>ggv", "<Cmd>vert Git<CR>", desc = "• Git: Open vertical Git status window" },
 			{ "<Leader>gg", "<Cmd>tab Git<CR>", desc = "• Git: Open Git status in a new tab" },
 		},
 	},
