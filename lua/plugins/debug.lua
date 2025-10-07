@@ -18,13 +18,25 @@ return {
 			require("config.dap").setup()
 		end,
 		keys = {
-			{ "<Leader><Space>", "<Cmd>DapToggleBreakpoint<CR>", desc = "Toggle breakpoint" },
-			{ "<Leader>bb", "<Cmd>DapContinue<CR>", desc = "Continue debugging" },
-			{ "[b", "<Cmd>DapStepInto<CR>", desc = "Step into" },
-			{ "]b", "<Cmd>DapStepOver<CR>", desc = "Step over" },
-			{ "<Leader>dr", "<Cmd>DapReplOpen<CR>", desc = "Open REPL" },
-			{ "<Leader>dd", "<Cmd>lua require('dapui').toggle()<CR>", desc = "Toggle UI" },
-			{ "<Esc><Esc>", "<Cmd>lua require('dapui').close()<CR>", desc = "Close UI" },
+			{
+				"<Leader><Space>",
+				"<Cmd>DapToggleBreakpoint<CR>",
+				desc = "• Dap: Toggle a breakpoint at the current line",
+			},
+			{
+				"<Leader>bb",
+				"<Cmd>DapContinue<CR>",
+				desc = "• Dap: Continue program execution from the current breakpoint",
+			},
+			{ "[b", "<Cmd>DapStepInto<CR>", desc = "• Dap: Step into the next function call" },
+			{ "]b", "<Cmd>DapStepOver<CR>", desc = "• Dap: Step over the next function call" },
+			{ "<Leader>dr", "<Cmd>DapReplOpen<CR>", desc = "• Dap: Open the interactive REPL for debugging" },
+			{
+				"<Leader>dd",
+				"<Cmd>lua require('dapui').toggle()<CR>",
+				desc = "• Dap: Toggle the DAP UI panels (scopes, watches, breakpoints)",
+			},
+			{ "<Esc><Esc>", "<Cmd>lua require('dapui').close()<CR>", desc = "• Dap: Close the DAP UI panels" },
 		},
 	},
 }

@@ -42,7 +42,7 @@ return {
 			{
 				"<Leader>e",
 				"<Cmd>lua Snacks.explorer()<CR>",
-				desc = "• File Explorer: Toggle Snacks.explore",
+				desc = "• File Explorer: Toggle Snacks.explorer to browse project files",
 			},
 		},
 	},

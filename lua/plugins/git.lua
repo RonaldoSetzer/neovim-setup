@@ -12,10 +12,10 @@ return {
 			},
 		},
 		keys = {
-			{ "]g", ":Gitsigns next_hunk<CR>", desc = "Next Hunk" },
-			{ "[g", ":Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
-			{ "Kg", ":Gitsigns preview_hunk_inline<CR>", desc = "Preview Hunk" },
-			{ "<Leader>gb", ":Gitsigns blame_line<CR>", desc = "Blame Line" },
+			{ "]g", ":Gitsigns next_hunk<CR>", desc = "• Git: Jump to the next Git hunk in the buffer" },
+			{ "[g", ":Gitsigns prev_hunk<CR>", desc = "• Git: Jump to the previous Git hunk in the buffer" },
+			{ "Kg", ":Gitsigns preview_hunk_inline<CR>", desc = "• Git: Preview the current Git hunk inline" },
+			{ "<Leader>gb", ":Gitsigns blame_line<CR>", desc = "• Git: Show Git blame for the current line" },
 		},
 	},
 	{
@@ -23,16 +23,16 @@ return {
 		dependencies = { "nvim-lua/plenary.nvim" },
 		cmd = "LazyGit",
 		keys = {
-			{ "<Leader>G", "<Cmd>LazyGit<CR>", desc = "Abrir LazyGit" },
-			{ "<Esc><Esc>", "<Cmd>q<CR>", mode = "t", desc = "Fechar LazyGit" },
+			{ "<Leader>G", "<Cmd>LazyGit<CR>", desc = "• Git: Open LazyGit interface" },
+			{ "<Esc><Esc>", "<Cmd>q<CR>", mode = "t", desc = "• Git: Close LazyGit interface" },
 		},
 	},
 	{
 		"tpope/vim-fugitive",
 		cmd = { "Git", "G" },
 		keys = {
-			{ "<Leader>ggv", "<Cmd>vert Git<CR>", desc = "• Git: Open Git status" },
-			{ "<Leader>gg", "<Cmd>tab Git<CR>", desc = "• Git: Open Git status" },
+			{ "<Leader>ggv", "<Cmd>vert Git<CR>", desc = "• Git: Open vertical Git status window" },
+			{ "<Leader>gg", "<Cmd>tab Git<CR>", desc = "• Git: Open Git status in a new tab" },
 		},
 	},
 }

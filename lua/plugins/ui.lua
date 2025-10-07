@@ -65,14 +65,14 @@ return {
 					enabled = true,
 				},
 				hover = {
-					enabled = false, -- Deixe o `lspsaga` gerenciar hover
+					enabled = false,
 				},
 				signature = {
-					enabled = false, -- Deixe o `lsp_signature` gerenciar assinatura
+					enabled = false,
 				},
 			},
 			presets = {
-				inc_rename = false, -- Use o `lspsaga` para renomeação
+				inc_rename = false,
 				bottom_search = false,
 				command_palette = true,
 				long_message_to_split = true,
@@ -126,16 +126,52 @@ return {
 			},
 		},
 		keys = {
-			{ "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", desc = "Next Diagnostic" },
-			{ "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", desc = "Prev Diagnostic" },
-			{ "<Leader>ca", "<Cmd>Lspsaga code_action<CR>", desc = "Code Action" },
-			{ "<Leader>d", "<Cmd>Lspsaga show_workspace_diagnostics<CR>", desc = "Workspace Diagnostics" },
-			{ "K", "<Cmd>Lspsaga hover_doc<CR>", desc = "Hover Doc" },
-			{ "Kd", "<Cmd>Lspsaga show_line_diagnostics<CR>", desc = "Line Diagnostics" },
-			{ "gd", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
-			{ "gD", "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-			{ "<Leader>fr", "<Cmd>Lspsaga finder<CR>", desc = "Finder" },
-			{ "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "Toggle Terminal" },
+			{
+				"]d",
+				"<Cmd>Lspsaga diagnostic_jump_next<CR>",
+				desc = "• LspSaga: Jump to the next diagnostic in the current buffer",
+			},
+			{
+				"[d",
+				"<Cmd>Lspsaga diagnostic_jump_prev<CR>",
+				desc = "• LspSaga: Jump to the previous diagnostic in the current buffer",
+			},
+			{
+				"<Leader>ca",
+				"<Cmd>Lspsaga code_action<CR>",
+				desc = "• LspSaga: Show available code actions for the current cursor position",
+			},
+			{
+				"<Leader>d",
+				"<Cmd>Lspsaga show_workspace_diagnostics<CR>",
+				desc = "• LspSaga: List all diagnostics in the current workspace",
+			},
+			{
+				"K",
+				"<Cmd>Lspsaga hover_doc<CR>",
+				desc = "• LspSaga: Show documentation for the symbol under the cursor in a floating window",
+			},
+			{
+				"Kd",
+				"<Cmd>Lspsaga show_line_diagnostics<CR>",
+				desc = "• LspSaga: Show all diagnostics on the current line",
+			},
+			{
+				"gd",
+				"<Cmd>Lspsaga goto_definition<CR>",
+				desc = "• LspSaga: Jump to the definition of the symbol under the cursor",
+			},
+			{
+				"gD",
+				"<Cmd>Lspsaga peek_definition<CR>",
+				desc = "• LspSaga: Peek at the definition of the symbol without leaving the current window",
+			},
+			{
+				"<Leader>fr",
+				"<Cmd>Lspsaga finder<CR>",
+				desc = "• LspSaga: Open the symbol finder to search references, definitions, and implementations",
+			},
+			{ "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "• LspSaga: Toggle a floating terminal window" },
 		},
 	},
 	{

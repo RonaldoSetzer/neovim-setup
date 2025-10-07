@@ -24,9 +24,21 @@ return {
 			require("config.lsp").setup(opts)
 		end,
 		keys = {
-			{ "Kh", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", desc = "LSP: Signature Help" },
-			{ "rr", "<Cmd>lua vim.lsp.buf.rename()<CR>", desc = "LSP: Rename Symbol" },
-			{ "<leader>FR", "<Cmd>lua vim.lsp.buf.references()<CR>", desc = "LSP: List References" },
+			{
+				"Kh",
+				"<Cmd>lua vim.lsp.buf.signature_help()<CR>",
+				desc = "• LSP: Show function signature help for the symbol under cursor",
+			},
+			{
+				"rr",
+				"<Cmd>lua vim.lsp.buf.rename()<CR>",
+				desc = "• LSP: Rename the symbol under the cursor across the workspace",
+			},
+			{
+				"<leader>FR",
+				"<Cmd>lua vim.lsp.buf.references()<CR>",
+				desc = "• LSP: List all references of the symbol under the cursor",
+			},
 			-- 	{ "<Leader>lf", "<Cmd>lua vim.lsp.buf.format({ async = true })<CR>", desc = "LSP: Format Document" },
 		},
 	},
@@ -59,7 +71,7 @@ return {
 				function()
 					require("conform").format({ async = true, lsp_fallback = true })
 				end,
-				desc = "• Refactor: Format current buffer with Conform",
+				desc = "• Refactor: Format the current buffer using Conform with optional LSP fallback",
 			},
 		},
 	},

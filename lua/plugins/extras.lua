@@ -8,7 +8,7 @@ return {
 				function()
 					require("oil").toggle_float()
 				end,
-				desc = "• File Explorer: Open Oil",
+				desc = "• File Explorer: Open Oil floating file explorer",
 			},
 			{
 				"<Esc><Esc>",
@@ -23,7 +23,7 @@ return {
 				end,
 				mode = "n",
 				ft = "oil",
-				desc = "• Oil: Close with ESC",
+				desc = "• Oil: Close the Oil floating window safely with ESC",
 			},
 		},
 		opts = {
