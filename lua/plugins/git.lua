@@ -31,7 +31,8 @@ return {
 		"tpope/vim-fugitive",
 		cmd = { "Git", "G" },
 		keys = {
-			{ "<Leader>gg", "<Cmd>vert Git<CR>", desc = "• Git: Open Git status" },
+			{ "<Leader>ggv", "<Cmd>vert Git<CR>", desc = "• Git: Open Git status" },
+			{ "<Leader>gg", "<Cmd>tab Git<CR>", desc = "• Git: Open Git status" },
 		},
 	},
 }
