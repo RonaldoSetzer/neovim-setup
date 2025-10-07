@@ -97,7 +97,12 @@ return {
 		},
 		event = "LspAttach",
 		opts = {
-			hover = true,
+			hover = {
+				enable = true,
+				border = "rounded",
+				width = 0.6,
+				height = 15,
+			},
 			symbol_in_winbar = {
 				enable = false,
 			},
@@ -129,9 +134,7 @@ return {
 			{ "Kd", "<Cmd>Lspsaga show_line_diagnostics<CR>", desc = "Line Diagnostics" },
 			{ "gd", "<Cmd>Lspsaga goto_definition<CR>", desc = "Goto Definition" },
 			{ "gD", "<Cmd>Lspsaga peek_definition<CR>", desc = "Peek Definition" },
-			{ "rr", "<Cmd>Lspsaga rename<CR>", desc = "Rename" },
-			{ "gf", "<Cmd>Lspsaga finder<CR>", desc = "Finder" },
-			{ "<Leader>o", "<Cmd>Lspsaga outline<CR>", desc = "Outline" },
+			{ "<Leader>fr", "<Cmd>Lspsaga finder<CR>", desc = "Finder" },
 			{ "<Leader>t", "<Cmd>Lspsaga term_toggle<CR>", desc = "Toggle Terminal" },
 		},
 	},
